@@ -1,35 +1,39 @@
+/* General Page Styling */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #0a0a0a;
-  color: #fff;
+  background: #1B0B3B; /* Deep purple from Gemini logo */
+  color: #E5E5E5;
   text-align: center;
 }
 
+/* Banner */
 header .banner {
   width: 100%;
   max-height: 220px;
   object-fit: cover;
   margin-bottom: 20px;
+  border-bottom: 3px solid #FFD700; /* subtle gold trim */
 }
 
+/* Intro Section */
 .intro h2 {
-  color: #39FF14; 
-  text-shadow: 0 0 12px #39FF14;
+  color: #FFD700; /* gold accent for elegance */
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
   margin-bottom: 10px;
 }
 
 .freespins-title {
   font-size: 3em;
-  color: #FF3ED4;
-  text-shadow: 0 0 20px #FF3ED4, 0 0 35px #FF3ED4;
+  color: #FF63B0; /* soft pink accent */
+  text-shadow: 0 0 10px rgba(255, 99, 176, 0.6);
   margin-bottom: 15px;
 }
 
 .countdown {
   font-size: 2.2em;
-  color: #FFD700;
-  text-shadow: 0 0 12px #FFD700, 0 0 20px #FFD700;
+  color: #00FFF7; /* cyan highlight */
+  text-shadow: 0 0 8px rgba(0, 255, 247, 0.6);
   margin-bottom: 15px;
 }
 
@@ -38,37 +42,41 @@ ul {
   padding: 0;
   margin: 10px 0;
   font-size: 1.1em;
-  color: #C700FF;
-  text-shadow: 0 0 8px #C700FF;
+  color: #E5E5E5;
+  line-height: 1.6;
 }
 
+/* Bonus Schedule Section */
 .bonus-schedule h2 {
-  color: #00FFF7;
-  text-shadow: 0 0 12px #00FFF7;
+  color: #FFD700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
   margin-top: 40px;
 }
 
+/* Jackpot Section */
 .jackpots h2 {
   color: #FFD700;
-  text-shadow: 0 0 15px #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
+/* Info Section */
 .info p {
   margin: 10px 0;
-  color: #FF3ED4;
-  text-shadow: 0 0 8px #FF3ED4;
+  color: #E5E5E5;
 }
 
+/* Promo Image */
 .promo-image img {
   width: 90%;
   max-width: 600px;
   margin: 20px auto;
-  border: 2px solid #39FF14;
-  box-shadow: 0 0 20px #39FF14, 0 0 25px #FF3ED4;
-  display: block;
+  border: 2px solid #FFD700;
   border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  display: block;
 }
 
+/* Buttons */
 .buttons {
   margin: 20px 0;
 }
@@ -78,16 +86,16 @@ ul {
   padding: 15px 30px;
   font-size: 1.3em;
   font-weight: bold;
-  color: #0a0a0a;
-  background: linear-gradient(90deg, #00FFF7, #FF3ED4);
+  color: #1B0B3B; /* text inside button matches background tone */
+  background: linear-gradient(90deg, #FF63B0, #00FFF7); /* pink → cyan gradient */
   text-decoration: none;
   border-radius: 12px;
-  box-shadow: 0 0 20px #00FFF7, 0 0 25px #FF3ED4;
+  box-shadow: 0 0 12px rgba(255, 99, 176, 0.4), 0 0 15px rgba(0, 255, 247, 0.4);
   margin: 10px;
   transition: all 0.3s ease;
 }
 
 .btn:hover {
-  transform: scale(1.05) rotate(-1deg);
-  box-shadow: 0 0 25px #00FFF7, 0 0 30px #FF3ED4, 0 0 40px #FFD700;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 99, 176, 0.6), 0 0 25px rgba(0, 255, 247, 0.6);
 }
