@@ -1,230 +1,811 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gemini Casino Bonus Portal</title>
+<title>Gemini Casino - Exclusive Bonuses & Free Spins | @matchbonusbot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-body {
+* {
     margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #0d0d0d;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
-    position: relative;
-    background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #0d0d0d, #1a1a1a);
-    background-size: 400% 400%;
-    animation: bgAnimate 20s ease infinite;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@keyframes bgAnimate {
-    0% {background-position:0% 50%;}
-    50% {background-position:100% 50%;}
-    100% {background-position:0% 50%;}
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #000000;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Top Banner */
+.top-banner {
+    width: 100%;
+    background: #000;
+    position: relative;
+}
+
+.top-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Gradient background */
+.gradient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(96, 165, 250, 0.1) 0%, transparent 50%);
+}
+
+.gradient-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+    animation: float 25s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    top: -150px;
+    left: -150px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    bottom: -100px;
+    right: -100px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    animation-delay: -7s;
+}
+
+.orb-3 {
+    width: 450px;
+    height: 450px;
+    top: 50%;
+    right: 10%;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    animation-delay: -14s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(40px, -40px) scale(1.1); }
+    50% { transform: translate(-30px, 30px) scale(0.9); }
+    75% { transform: translate(30px, 40px) scale(1.05); }
 }
 
 /* Container */
 .container {
     position: relative;
     z-index: 1;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 0 30px rgba(255,255,255,0.1);
-    border: 2px solid rgba(255,255,255,0.1);
-    animation: containerGlow 3s ease-in-out infinite alternate;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-@keyframes containerGlow {
-    0% { box-shadow: 0 0 20px rgba(255,255,255,0.1);}
-    100% { box-shadow: 0 0 40px rgba(255,255,255,0.25);}
+/* Features Strip */
+.features-strip {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+    margin-bottom: 60px;
 }
 
-h1 { font-size: 2em; margin-bottom: 20px; }
+.features-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
 
-.bonus-text {
-    font-size: 1.8em;
-    font-weight: 700;
-    margin-bottom: 25px;
-    background: linear-gradient(135deg, #c0c0ff, #ffc0ff, #a0ffe0);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+.features-content span {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.features-content span::before {
+    content: '•';
+    margin-right: 12px;
+    color: #a78bfa;
+    font-size: 20px;
+}
+
+/* Main Card */
+.main-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    margin-bottom: 40px;
     position: relative;
+    overflow: hidden;
 }
 
-.bonus-text::after {
+.main-card::before {
     content: '';
     position: absolute;
-    top:0; left:0; width:100%; height:100%;
-    background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
-    animation: shimmer 2s infinite;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1) 20%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        rgba(255, 255, 255, 0.1) 80%, 
+        transparent);
+}
+
+/* Free Spins Section */
+.freespins-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.freespins-title {
+    font-size: 42px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: shimmer 3s ease-in-out infinite;
+    background-size: 200% auto;
 }
 
 @keyframes shimmer {
-    0% { transform: translateX(-100%);}
-    100% { transform: translateX(100%);}
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
 }
 
-p { font-size:1.05em; margin-bottom:30px; color: rgba(255,255,255,0.85); }
+/* Countdown Timer */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
 
-/* Portal button */
-.bonus-button {
-    display: inline-block;
-    padding: 15px 35px;
-    font-size: 1.2em;
+.timer-unit {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px 24px;
+    min-width: 100px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.timer-value {
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.timer-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-weight: 600;
-    color: #fff;
-    background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 50px;
+}
+
+/* Description Text */
+.description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Info Box */
+.info-box {
+    background: rgba(167, 139, 250, 0.1);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 32px 0;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Schedule Section */
+.schedule-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.schedule-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+
+.schedule-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(4px);
+}
+
+.schedule-emoji {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.schedule-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.schedule-details {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* Jackpot Section */
+.jackpot-section {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 140, 0, 0.1) 100%);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 32px 0;
+    text-align: center;
+}
+
+.jackpot-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffd700;
+    margin-bottom: 16px;
+}
+
+.jackpot-amount {
+    font-size: 36px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ff8c00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 8px 0;
+}
+
+.jackpot-text {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 12px 0;
+}
+
+/* Features List */
+.features-list {
+    margin: 32px 0;
+    text-align: center;
+}
+
+.feature-item {
+    font-size: 17px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    margin: 48px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 20px 48px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 8px 24px rgba(102, 126, 234, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
     position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    margin: 10px;
 }
 
-.bonus-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 50px rgba(255,255,255,0.25);
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 32px rgba(102, 126, 234, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.telegram-button {
+    background: linear-gradient(135deg, #0088cc 0%, #00a8e8 100%);
+    box-shadow: 
+        0 8px 24px rgba(0, 136, 204, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.telegram-button:hover {
+    box-shadow: 
+        0 12px 32px rgba(0, 136, 204, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Promo Image */
+.promo-image {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.promo-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Video Section */
+.video-section {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-card {
+        padding: 32px 24px;
+    }
+    
+    .freespins-title {
+        font-size: 32px;
+    }
+    
+    .timer-value {
+        font-size: 36px;
+    }
+    
+    .timer-unit {
+        min-width: 80px;
+        padding: 16px 20px;
+    }
+    
+    .schedule-title {
+        font-size: 24px;
+    }
+    
+    .jackpot-amount {
+        font-size: 28px;
+    }
+    
+    .features-content {
+        gap: 20px;
+        font-size: 14px;
+    }
+    
+    .cta-button {
+        padding: 16px 36px;
+        font-size: 16px;
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .freespins-title {
+        font-size: 28px;
+    }
+    
+    .countdown-timer {
+        gap: 12px;
+    }
+    
+    .timer-unit {
+        min-width: 70px;
+        padding: 12px 16px;
+    }
+    
+    .timer-value {
+        font-size: 32px;
+    }
+    
+    .timer-label {
+        font-size: 12px;
+    }
 }
 
 /* Floating particles */
 .particle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    animation: float 10s linear infinite;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px) translateX(0px);}
-    50% { transform: translateY(-30px) translateX(15px);}
-    100% { transform: translateY(0px) translateX(0px);}
-}
-
-/* Rolling numbers */
-.slot-bg {
-    position: absolute;
-    top:0; left:50%; transform:translateX(-50%);
-    width:100%; height:100%; display:flex; justify-content:space-around;
-    pointer-events:none; z-index:0;
-}
-
-.slot-column {
-    font-size:2em; font-weight:bold; color: rgba(255,255,255,0.08);
-    text-align:center; animation: roll linear infinite;
-}
-
-/* Telegram popup */
-.popup {
     position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(15px);
-    padding: 25px 30px;
-    border-radius: 15px;
-    text-align: center;
-    opacity: 0;
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
     pointer-events: none;
-    transition: opacity 0.5s ease;
-    box-shadow: 0 0 25px rgba(255,255,255,0.1);
-    z-index:2;
+    z-index: 0;
+    animation: particle-float linear infinite;
 }
 
-.popup.show { opacity:1; pointer-events:auto; }
-
-.popup a {
-    display:inline-block;
-    margin-top:15px;
-    padding:10px 25px;
-    border-radius:30px;
-    background: linear-gradient(135deg, #c0c0ff, #ffc0ff, #a0ffe0);
-    color:#0d0d0d;
-    font-weight:600;
-    text-decoration:none;
+@keyframes particle-float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(20px);
+        opacity: 0;
+    }
 }
-
 </style>
 </head>
 <body>
 
-<!-- Slot numbers -->
-<div class="slot-bg" id="slotBg"></div>
+<!-- Gradient background -->
+<div class="gradient-bg"></div>
+<div class="gradient-orb orb-1"></div>
+<div class="gradient-orb orb-2"></div>
+<div class="gradient-orb orb-3"></div>
 
-<div class="container">
-    <h1>Welcome to Gemini Casino</h1>
-    <div class="bonus-text">200% Match Bonus!</div>
-    <p>Claim your bonus instantly using our Telegram bot <strong>@matchbonusbot</strong>! Click below to jump straight to the portal and start your winning streak.</p>
-    <a href="https://geminicasino.com/?registration=true&promo=FB888" class="bonus-button" target="_blank" id="portalButton">Enter Bonus Portal</a>
+<!-- Top Banner -->
+<div class="top-banner">
+    <img src="https://tkcapp.simdif.com/images/public/sd_6919402a8d965.jpg?no_cache=1763266124" alt="Gemini Casino Banner">
 </div>
 
-<div class="popup" id="telegramPopup">
-    <p>Start with our Telegram bot:</p>
-    <a href="https://t.me/matchbonusbot" target="_blank">@matchbonusbot</a>
+<!-- Features Strip -->
+<div class="features-strip">
+    <div class="features-content">
+        <span>Exclusive Bonuses</span>
+        <span>Fast Drops</span>
+        <span>VIP Experience</span>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    
+    <!-- Free Spins Friday -->
+    <div class="main-card">
+        <div class="freespins-header">
+            <h1 class="freespins-title">Freespins Friday!!!</h1>
+        </div>
+        
+        <div class="countdown-timer" id="countdown">
+            <div class="timer-unit">
+                <div class="timer-value" id="days">0</div>
+                <div class="timer-label">Days</div>
+            </div>
+            <div class="timer-unit">
+                <div class="timer-value" id="hours">0</div>
+                <div class="timer-label">Hours</div>
+            </div>
+            <div class="timer-unit">
+                <div class="timer-value" id="minutes">0</div>
+                <div class="timer-label">Minutes</div>
+            </div>
+            <div class="timer-unit">
+                <div class="timer-value" id="seconds">0</div>
+                <div class="timer-label">Seconds</div>
+            </div>
+        </div>
+        
+        <p class="description">
+            Every Friday at 8 PM Mountain Time, Gemini Casino drops a limited Free Spins code.
+        </p>
+        
+        <div class="info-box">
+            <div class="info-item">
+                <span class="info-icon">⚡</span>
+                <span>Codes disappear in seconds — you must be FAST.</span>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">⭐</span>
+                <span>Requires a valid Gemini Casino account.</span>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">💬</span>
+                <span>Codes are released only inside the official Telegram channel.</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Schedule -->
+    <div class="main-card">
+        <h2 class="schedule-title">🗓 New Bonus Schedule Starting November 1st</h2>
+        
+        <div class="schedule-item">
+            <div>
+                <span class="schedule-emoji">🎁</span>
+                <span class="schedule-name">Saturday 100% Deposit Match</span>
+            </div>
+            <div class="schedule-details">
+                Each Deposit From 9pm-10pm MST
+            </div>
+        </div>
+        
+        <div class="schedule-item">
+            <div>
+                <span class="schedule-emoji">🎁</span>
+                <span class="schedule-name">Monday Reload Bonus</span>
+            </div>
+            <div class="schedule-details">
+                50% First Deposit Match<br>
+                8pm-9pm MST
+            </div>
+        </div>
+        
+        <div class="schedule-item">
+            <div>
+                <span class="schedule-emoji">🎁</span>
+                <span class="schedule-name">Free Spin Has Returned</span>
+            </div>
+            <div class="schedule-details">
+                Free Spin Giveaway Fridays @8pm MST! They go fast!!!!
+            </div>
+        </div>
+    </div>
+    
+    <!-- Jackpots -->
+    <div class="jackpot-section">
+        <div class="jackpot-title">💎 PROGRESSIVE JACKPOTS 💎</div>
+        <div class="jackpot-text">
+            <strong>Diamond Jackpot</strong>
+            <div class="jackpot-amount">$5,992.00</div>
+        </div>
+        <div class="jackpot-text">
+            <strong>The Ultimate Progressive Jackpot</strong>
+            <div class="jackpot-amount">$284,549.00</div>
+            <div style="font-size: 14px; color: rgba(255,255,255,0.8); margin-top: 8px;">and climbing!</div>
+        </div>
+        <div class="jackpot-text" style="margin-top: 24px; font-size: 18px; font-weight: 700;">
+            Are Due To Go Off Anytime Now!
+        </div>
+        <div class="jackpot-text">
+            🪙 Any Spin Could Qualify You To Win Either One Or Both! 🤑
+        </div>
+        <div class="jackpot-text" style="font-size: 19px; font-weight: 700;">
+            💵 You could be the next ultimate jackpot winner! What would you do with the money?
+        </div>
+    </div>
+    
+    <!-- Features -->
+    <div class="features-list">
+        <div class="feature-item">🎮 Hacksaw Gaming - Newest Addition</div>
+        <div class="feature-item">🎰 A to Z - We Have Them All</div>
+        <div class="feature-item">🎲 Live Tables</div>
+        <div class="feature-item">🚫 No KYC EVER!!</div>
+        <div class="feature-item">♾️ NO LIMITS!!</div>
+        <div class="feature-item">💰 YOU KEEP WHAT YOU WIN!!!</div>
+    </div>
+    
+    <!-- Promo Image -->
+    <div class="promo-image">
+        <img src="https://tkcapp.simdif.com/images/public/sd_6919406a55295.jpg?no_cache=1763266174" alt="Gemini Casino Promo">
+    </div>
+    
+    <!-- CTA Buttons -->
+    <div class="cta-section">
+        <a href="https://geminicasino.com/?registration=true&promo=FB888" class="cta-button" target="_blank">
+            🎰 Join Gemini Casino Now
+        </a>
+        <a href="https://t.me/matchbonusbot" class="cta-button telegram-button" target="_blank">
+            ✈ Start @matchbonusbot
+        </a>
+    </div>
+    
+    <!-- Video Section -->
+    <div class="video-section">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/xM7AFnfgAtw?si=dqftgF2o5BJS9vs8" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>© 2024 Gemini Casino. Play responsibly. 18+</p>
 </div>
 
 <script>
-// Particles
-const particleCount = 25;
-for(let i=0;i<particleCount;i++){
-    const p=document.createElement('div');
-    p.className='particle';
-    p.style.top=Math.random()*window.innerHeight+'px';
-    p.style.left=Math.random()*window.innerWidth+'px';
-    p.style.width=2+Math.random()*4+'px';
-    p.style.height=p.style.width;
-    p.style.animationDuration=5+Math.random()*10+'s';
-    document.body.appendChild(p);
-}
-
-// Telegram popup
-const popup=document.getElementById('telegramPopup');
-setTimeout(()=>{popup.classList.add('show');},1500);
-
-// Rolling numbers with random updates
-const slotBg=document.getElementById('slotBg');
-const numbers='0123456789';
-for(let i=0;i<5;i++){
-    const col=document.createElement('div');
-    col.className='slot-column';
-    col.textContent=numbers.repeat(4);
-    slotBg.appendChild(col);
-    setInterval(()=>{
-        let newDigits='';
-        for(let j=0;j<numbers.length;j++){
-            newDigits+=numbers[Math.floor(Math.random()*numbers.length)];
-        }
-        col.textContent=newDigits.repeat(4);
-    },2000+i*500);
-}
-
-// Button click sparkle
-const portalButton=document.getElementById('portalButton');
-portalButton.addEventListener('click',()=>{ 
-    for(let i=0;i<10;i++){
-        const sparkle=document.createElement('div');
-        sparkle.className='particle';
-        sparkle.style.top=(portalButton.offsetTop+portalButton.offsetHeight/2)+'px';
-        sparkle.style.left=(portalButton.offsetLeft+portalButton.offsetWidth/2)+'px';
-        sparkle.style.width='3px';
-        sparkle.style.height='3px';
-        sparkle.style.animationDuration='1s';
-        document.body.appendChild(sparkle);
-        setTimeout(()=>{sparkle.remove();},1000);
+// Create floating particles
+function createParticles() {
+    const particleCount = 30;
+    for(let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (15 + Math.random() * 15) + 's';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(particle);
     }
+}
+
+createParticles();
+
+// Countdown Timer to next Friday 8 PM MST
+function updateCountdown() {
+    const now = new Date();
+    
+    // Convert current time to MST (UTC-7)
+    const mstOffset = -7 * 60; // MST is UTC-7
+    const currentMST = new Date(now.getTime() + (now.getTimezoneOffset() + mstOffset) * 60000);
+    
+    // Find next Friday at 8 PM MST
+    let nextFriday = new Date(currentMST);
+    nextFriday.setHours(20, 0, 0, 0); // Set to 8 PM
+    
+    // Get day of week (0 = Sunday, 5 = Friday)
+    const currentDay = currentMST.getDay();
+    const daysUntilFriday = (5 - currentDay + 7) % 7;
+    
+    // If it's Friday but past 8 PM, or any other day, find next Friday
+    if (currentDay === 5 && currentMST.getHours() >= 20) {
+        nextFriday.setDate(nextFriday.getDate() + 7);
+    } else if (currentDay !== 5 || currentMST.getHours() < 20) {
+        nextFriday.setDate(nextFriday.getDate() + daysUntilFriday);
+    }
+    
+    // Calculate difference
+    const diff = nextFriday - currentMST;
+    
+    if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+    } else {
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '0';
+        document.getElementById('minutes').textContent = '0';
+        document.getElementById('seconds').textContent = '0';
+    }
+}
+
+// Update countdown every second
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
 });
 </script>
 
 </body>
 </html>
+```
