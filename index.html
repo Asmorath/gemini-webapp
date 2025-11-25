@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini Casino WebApp</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 2.2rem;
+      color: #71f7c5;
+      text-shadow: 0 0 12px #71f7c5;
+    }
+
+    .sub {
+      color: #d68bff;
+      font-size: 1rem;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px #d68bff;
+    }
+
+    .btn {
+      display: block;
+      width: 80%;
+      margin: 15px auto;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: #000;
+      background: linear-gradient(90deg, #00f2ff, #ff45d4);
+      box-shadow: 0 0 20px #00eaff;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px #ff45d4;
+    }
+
+    .timer {
+      margin-top: 25px;
+      font-size: 1.4rem;
+      color: #ffd966;
+      text-shadow: 0 0 10px #ffd966;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      color: #ff9de6;
+      text-shadow: 0 0 12px #ff9de6;
+    }
+
+    .info-box {
+      width: 85%;
+      margin: 15px auto;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 15px #333;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Gemini Casino</h1>
+  <div class="sub">Exclusive Bonuses • Fast Drops • VIP Experience</div>
+
+  <!-- BONUS BUTTON -->
+  <a class="btn"
+     href="https://geminicasino.com/?registration=true&promo=FB888"
+     target="_blank">
+     🎁 Claim Your 200% Bonus
+  </a>
+
+  <!-- OFFICIAL CHANNEL -->
+  <a class="btn"
+     href="https://t.me/officialgeminicasino"
+     target="_blank">
+     💎 Join Official Gemini Casino Channel
+  </a>
+
+  <!-- FREESPINS FRIDAY -->
+  <h2 class="section-title">Freespins Friday Countdown</h2>
+
+  <div class="timer" id="countdown">Loading...</div>
+
+  <div class="info-box">
+    Every Friday at <b>8 PM Mountain Time</b>, Gemini Casino drops a limited Free Spins code.<br><br>
+    ⚡ Codes disappear in seconds — you must be FAST.<br>
+    ⭐ Requires a valid Gemini Casino account.<br>
+    💬 Codes are released only inside the official Telegram channel.
+  </div>
+
+  <script>
+    function getNextFriday8PM() {
+      const now = new Date();
+      const result = new Date(now);
+
+      result.setUTCHours(2, 0, 0, 0); // 8PM MT = 2AM UTC (next day)
+      result.setDate(now.getDate() + ((5 - now.getDay() + 7) % 7));
+
+      if (result < now) {
+        result.setDate(result.getDate() + 7);
+      }
+
+      return result;
+    }
+
+    function updateCountdown() {
+      const target = getNextFriday8PM();
+      const now = new Date();
+      const diff = target - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerText = "Happening NOW! Go claim!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("countdown").innerHTML =
+        `${days}d ${hours}h ${mins}m ${secs}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
