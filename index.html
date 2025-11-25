@@ -5,152 +5,200 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gemini Casino Bonus Portal</title>
 <style>
-    /* Core styles */
-    body {
-        margin: 0;
-        font-family: 'Arial', sans-serif;
-        background: linear-gradient(135deg, #8affc1, #b76eff, #ff4f9c, #0ff6f6);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden;
-        color: #fff;
-        text-align: center;
-    }
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+}
 
-    @keyframes gradientBG {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-    }
+/* Rolling numbers background */
+.slot-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+    z-index: 0;
+}
 
-    .container {
-        background: rgba(0,0,0,0.6);
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 0 30px rgba(255,255,255,0.2);
-        backdrop-filter: blur(10px);
-        max-width: 400px;
-        position: relative;
-    }
+.slot-column {
+    font-size: 2em;
+    font-weight: bold;
+    color: rgba(255,255,255,0.1);
+    text-align: center;
+    animation: roll 5s linear infinite;
+}
 
-    h1 {
-        font-size: 2em;
-        margin-bottom: 20px;
-        text-shadow: 0 0 10px #fff, 0 0 20px #ff4f9c;
-    }
+@keyframes roll {
+    0% { transform: translateY(0%); }
+    100% { transform: translateY(-100%); }
+}
 
-    .bonus-text {
-        font-size: 1.5em;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #ffeb3b;
-        animation: flash 1s infinite alternate;
-        text-shadow: 0 0 10px #fff, 0 0 20px #ffeb3b;
-    }
+.container {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 0 40px rgba(255,255,255,0.1);
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-out;
+}
 
-    @keyframes flash {
-        0% {color: #ffeb3b; text-shadow: 0 0 10px #fff, 0 0 20px #ffeb3b;}
-        50% {color: #ff4f9c; text-shadow: 0 0 20px #ff4f9c, 0 0 30px #ffeb3b;}
-        100% {color: #00fff6; text-shadow: 0 0 20px #00fff6, 0 0 30px #ffeb3b;}
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95);}
+    to { opacity: 1; transform: scale(1);}
+}
 
-    p {
-        font-size: 1.1em;
-        margin-bottom: 30px;
-        line-height: 1.5;
-    }
+h1 { font-size: 2em; margin-bottom: 20px; }
 
-    .bonus-button {
-        display: inline-block;
-        padding: 15px 35px;
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #fff;
-        background: linear-gradient(45deg, #ff4f9c, #b76eff, #0ff6f6);
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        text-decoration: none;
-        box-shadow: 0 0 20px rgba(255,255,255,0.3);
-        transition: all 0.3s ease;
-    }
+.bonus-text {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #c0c0ff, #ffc0ff, #a0ffe0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shimmer 2s infinite alternate;
+}
 
-    .bonus-button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 40px rgba(255,255,255,0.6);
-        text-shadow: 0 0 10px #fff;
-    }
+@keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
 
-    .bot-name {
-        font-weight: bold;
-        color: #00fff6;
-    }
+p {
+    font-size: 1.05em;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.85);
+}
 
-    .countdown {
-        margin-top: 15px;
-        font-size: 1em;
-        color: #ffeb3b;
-        font-weight: bold;
-        text-shadow: 0 0 10px #fff;
-    }
+.bonus-button {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0 25px rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
 
-    /* Subtle sparkle animation */
-    .sparkle {
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        background: #fff;
-        border-radius: 50%;
-        animation: sparkleAnim 2s linear infinite;
-        opacity: 0.8;
-    }
+.bonus-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255,255,255,0.2);
+    background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
 
-    @keyframes sparkleAnim {
-        0% {transform: translateY(0px) scale(1);}
-        50% {transform: translateY(-10px) scale(1.3);}
-        100% {transform: translateY(0px) scale(1);}
-    }
+/* Floating particles */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    animation: float 10s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) translateX(0px);}
+    50% { transform: translateY(-30px) translateX(15px);}
+    100% { transform: translateY(0px) translateX(0px);}
+}
+
+/* Telegram popup */
+.popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    padding: 25px 30px;
+    border-radius: 15px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    box-shadow: 0 0 25px rgba(255,255,255,0.1);
+    z-index: 2;
+}
+
+.popup.show { opacity: 1; pointer-events: auto; }
+
+.popup a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #c0c0ff, #ffc0ff, #a0ffe0);
+    color: #0d0d0d;
+    font-weight: 600;
+    text-decoration: none;
+}
 
 </style>
 </head>
 <body>
 
+<div class="slot-bg" id="slotBg"></div>
+
 <div class="container">
-    <h1>🎰 Welcome to Gemini Casino! 🎰</h1>
-    <div class="bonus-text">200% MATCH BONUS!</div>
-    <p>Claim your bonus instantly using our Telegram bot <span class="bot-name">@matchbonusbot</span>!  
-    Click below to jump straight to the portal and start your winning streak.</p>
+    <h1>Welcome to Gemini Casino</h1>
+    <div class="bonus-text">200% Match Bonus!</div>
+    <p>Claim your bonus instantly using our Telegram bot <strong>@matchbonusbot</strong>! Click below to jump straight to the portal and start your winning streak.</p>
     <a href="https://geminicasino.com/?registration=true&promo=FB888" class="bonus-button" target="_blank">Enter Bonus Portal</a>
-    <div class="countdown">Hurry! Offer ends in <span id="timer">10:00</span></div>
 </div>
 
-<!-- Sparkle effect -->
+<div class="popup" id="telegramPopup">
+    <p>Start with our Telegram bot:</p>
+    <a href="https://t.me/matchbonusbot" target="_blank">@matchbonusbot</a>
+</div>
+
 <script>
-    const body = document.body;
-    for(let i=0;i<40;i++){
-        const sparkle = document.createElement('div');
-        sparkle.className = 'sparkle';
-        sparkle.style.left = Math.random() * window.innerWidth + 'px';
-        sparkle.style.top = Math.random() * window.innerHeight + 'px';
-        sparkle.style.animationDuration = 1 + Math.random() * 3 + 's';
-        sparkle.style.opacity = Math.random();
-        body.appendChild(sparkle);
-    }
+const particleCount = 25;
+for(let i=0;i<particleCount;i++){
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.top = Math.random() * window.innerHeight + 'px';
+    particle.style.left = Math.random() * window.innerWidth + 'px';
+    particle.style.animationDuration = 5 + Math.random()*10 + 's';
+    particle.style.width = 2 + Math.random()*4 + 'px';
+    particle.style.height = particle.style.width;
+    document.body.appendChild(particle);
+}
 
-    // Countdown timer
-    let countdown = 600; // 10 minutes in seconds
-    const timerEl = document.getElementById('timer');
+const popup = document.getElementById('telegramPopup');
+setTimeout(()=>{ popup.classList.add('show'); }, 1500);
 
-    setInterval(() => {
-        const minutes = Math.floor(countdown / 60);
-        const seconds = countdown % 60;
-        timerEl.textContent = `${minutes}:${seconds.toString().padStart(2,'0')}`;
-        if(countdown > 0) countdown--;
-    }, 1000);
+const slotBg = document.getElementById('slotBg');
+const numbers = '0123456789';
+for(let i=0;i<5;i++){
+    const col = document.createElement('div');
+    col.className = 'slot-column';
+    col.style.animationDuration = (3 + Math.random()*3)+'s';
+    col.textContent = numbers.repeat(4);
+    slotBg.appendChild(col);
+}
 </script>
 
 </body>
