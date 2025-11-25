@@ -9,58 +9,42 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background: #0d0d0d;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
     color: #fff;
     position: relative;
+    background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #0d0d0d, #1a1a1a);
+    background-size: 400% 400%;
+    animation: bgAnimate 20s ease infinite;
 }
 
-/* Rolling numbers background */
-.slot-bg {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    pointer-events: none;
-    z-index: 0;
+@keyframes bgAnimate {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
 }
 
-.slot-column {
-    font-size: 2em;
-    font-weight: bold;
-    color: rgba(255,255,255,0.1);
-    text-align: center;
-    animation: roll 5s linear infinite;
-}
-
-@keyframes roll {
-    0% { transform: translateY(0%); }
-    100% { transform: translateY(-100%); }
-}
-
+/* Container */
 .container {
+    position: relative;
+    z-index: 1;
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 40px;
-    text-align: center;
     max-width: 400px;
-    box-shadow: 0 0 40px rgba(255,255,255,0.1);
-    position: relative;
-    z-index: 1;
-    animation: fadeIn 1.5s ease-out;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.1);
+    animation: containerGlow 3s ease-in-out infinite alternate;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95);}
-    to { opacity: 1; transform: scale(1);}
+@keyframes containerGlow {
+    0% { box-shadow: 0 0 20px rgba(255,255,255,0.1);}
+    100% { box-shadow: 0 0 40px rgba(255,255,255,0.25);}
 }
 
 h1 { font-size: 2em; margin-bottom: 20px; }
@@ -73,47 +57,49 @@ h1 { font-size: 2em; margin-bottom: 20px; }
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    animation: shimmer 2s infinite alternate;
+    position: relative;
+}
+
+.bonus-text::after {
+    content: '';
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
+    animation: shimmer 2s infinite;
 }
 
 @keyframes shimmer {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+    0% { transform: translateX(-100%);}
+    100% { transform: translateX(100%);}
 }
 
-p {
-    font-size: 1.05em;
-    margin-bottom: 30px;
-    line-height: 1.4;
-    color: rgba(255,255,255,0.85);
-}
+p { font-size:1.05em; margin-bottom:30px; color: rgba(255,255,255,0.85); }
 
+/* Portal button */
 .bonus-button {
     display: inline-block;
     padding: 15px 35px;
     font-size: 1.2em;
     font-weight: 600;
     color: #fff;
-    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
-    border: 1px solid rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 50px;
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 0 25px rgba(255,255,255,0.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .bonus-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(255,255,255,0.2);
-    background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+    box-shadow: 0 0 50px rgba(255,255,255,0.25);
 }
 
 /* Floating particles */
 .particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
     border-radius: 50%;
     background: rgba(255,255,255,0.2);
     animation: float 10s linear infinite;
@@ -123,6 +109,19 @@ p {
     0% { transform: translateY(0px) translateX(0px);}
     50% { transform: translateY(-30px) translateX(15px);}
     100% { transform: translateY(0px) translateX(0px);}
+}
+
+/* Rolling numbers */
+.slot-bg {
+    position: absolute;
+    top:0; left:50%; transform:translateX(-50%);
+    width:100%; height:100%; display:flex; justify-content:space-around;
+    pointer-events:none; z-index:0;
+}
+
+.slot-column {
+    font-size:2em; font-weight:bold; color: rgba(255,255,255,0.08);
+    text-align:center; animation: roll linear infinite;
 }
 
 /* Telegram popup */
@@ -140,33 +139,34 @@ p {
     pointer-events: none;
     transition: opacity 0.5s ease;
     box-shadow: 0 0 25px rgba(255,255,255,0.1);
-    z-index: 2;
+    z-index:2;
 }
 
-.popup.show { opacity: 1; pointer-events: auto; }
+.popup.show { opacity:1; pointer-events:auto; }
 
 .popup a {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 25px;
-    border-radius: 30px;
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 25px;
+    border-radius:30px;
     background: linear-gradient(135deg, #c0c0ff, #ffc0ff, #a0ffe0);
-    color: #0d0d0d;
-    font-weight: 600;
-    text-decoration: none;
+    color:#0d0d0d;
+    font-weight:600;
+    text-decoration:none;
 }
 
 </style>
 </head>
 <body>
 
+<!-- Slot numbers -->
 <div class="slot-bg" id="slotBg"></div>
 
 <div class="container">
     <h1>Welcome to Gemini Casino</h1>
     <div class="bonus-text">200% Match Bonus!</div>
     <p>Claim your bonus instantly using our Telegram bot <strong>@matchbonusbot</strong>! Click below to jump straight to the portal and start your winning streak.</p>
-    <a href="https://geminicasino.com/?registration=true&promo=FB888" class="bonus-button" target="_blank">Enter Bonus Portal</a>
+    <a href="https://geminicasino.com/?registration=true&promo=FB888" class="bonus-button" target="_blank" id="portalButton">Enter Bonus Portal</a>
 </div>
 
 <div class="popup" id="telegramPopup">
@@ -175,30 +175,55 @@ p {
 </div>
 
 <script>
+// Particles
 const particleCount = 25;
 for(let i=0;i<particleCount;i++){
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.top = Math.random() * window.innerHeight + 'px';
-    particle.style.left = Math.random() * window.innerWidth + 'px';
-    particle.style.animationDuration = 5 + Math.random()*10 + 's';
-    particle.style.width = 2 + Math.random()*4 + 'px';
-    particle.style.height = particle.style.width;
-    document.body.appendChild(particle);
+    const p=document.createElement('div');
+    p.className='particle';
+    p.style.top=Math.random()*window.innerHeight+'px';
+    p.style.left=Math.random()*window.innerWidth+'px';
+    p.style.width=2+Math.random()*4+'px';
+    p.style.height=p.style.width;
+    p.style.animationDuration=5+Math.random()*10+'s';
+    document.body.appendChild(p);
 }
 
-const popup = document.getElementById('telegramPopup');
-setTimeout(()=>{ popup.classList.add('show'); }, 1500);
+// Telegram popup
+const popup=document.getElementById('telegramPopup');
+setTimeout(()=>{popup.classList.add('show');},1500);
 
-const slotBg = document.getElementById('slotBg');
-const numbers = '0123456789';
+// Rolling numbers with random updates
+const slotBg=document.getElementById('slotBg');
+const numbers='0123456789';
 for(let i=0;i<5;i++){
-    const col = document.createElement('div');
-    col.className = 'slot-column';
-    col.style.animationDuration = (3 + Math.random()*3)+'s';
-    col.textContent = numbers.repeat(4);
+    const col=document.createElement('div');
+    col.className='slot-column';
+    col.textContent=numbers.repeat(4);
     slotBg.appendChild(col);
+    setInterval(()=>{
+        let newDigits='';
+        for(let j=0;j<numbers.length;j++){
+            newDigits+=numbers[Math.floor(Math.random()*numbers.length)];
+        }
+        col.textContent=newDigits.repeat(4);
+    },2000+i*500);
 }
+
+// Button click sparkle
+const portalButton=document.getElementById('portalButton');
+portalButton.addEventListener('click',()=>{ 
+    for(let i=0;i<10;i++){
+        const sparkle=document.createElement('div');
+        sparkle.className='particle';
+        sparkle.style.top=(portalButton.offsetTop+portalButton.offsetHeight/2)+'px';
+        sparkle.style.left=(portalButton.offsetLeft+portalButton.offsetWidth/2)+'px';
+        sparkle.style.width='3px';
+        sparkle.style.height='3px';
+        sparkle.style.animationDuration='1s';
+        document.body.appendChild(sparkle);
+        setTimeout(()=>{sparkle.remove();},1000);
+    }
+});
 </script>
 
 </body>
