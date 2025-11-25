@@ -3,201 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gemini Casino — Exclusive Bonuses & VIP Experience</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Gemini Casino Bonus Portal</title>
 <style>
-  /* Global Styles */
-  body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #1a1a1a; /* Dark luxury backdrop */
-    color: #e0e0e0;
-    line-height: 1.6;
-  }
-
-  a {
-    text-decoration: none;
-    color: #a3ff00; /* Lime accent for luxury */
-  }
-
-  /* Banner */
-  .banner {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* Section Headers */
-  .hero {
-    text-align: center;
-    padding: 40px 20px 20px;
-  }
-
-  .hero h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #a3ff00; /* Lime green accent */
-    margin-bottom: 10px;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #f5f5f5;
-    margin-bottom: 20px;
-  }
-
-  .subheadline {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #ffd700; /* gold accent */
-    margin-bottom: 30px;
-  }
-
-  /* Countdown Timer */
-  .countdown {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #a3ff00;
-    margin: 20px 0;
-    text-align: center;
-  }
-
-  /* Info Box */
-  .info-box {
-    background: rgba(255,255,255,0.05);
-    border-left: 5px solid #ffd700;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 900px;
-    border-radius: 8px;
-  }
-
-  .info-box ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .info-box li {
-    margin: 10px 0;
-  }
-
-  /* Bonus Button */
-  .btn {
-    display: inline-block;
-    background-color: #a3ff00;
-    color: #1a1a1a;
-    font-weight: 700;
-    padding: 14px 28px;
-    margin: 20px auto;
-    text-align: center;
-    border-radius: 6px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .btn:hover {
-    background-color: #d4ff33;
-  }
-
-  /* Jackpot Display */
-  .jackpot {
-    text-align: center;
-    margin: 40px 20px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #ffd700;
-  }
-
-  .jackpot span {
-    font-size: 1.8rem;
-    color: #a3ff00;
-  }
-
-  /* Responsive */
-  @media(max-width: 600px){
-    .hero h1 {
-      font-size: 2rem;
+    /* Core styles */
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #8affc1, #b76eff, #ff4f9c, #0ff6f6);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        color: #fff;
+        text-align: center;
     }
+
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+
+    .container {
+        background: rgba(0,0,0,0.6);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(255,255,255,0.2);
+        backdrop-filter: blur(10px);
+        max-width: 400px;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff4f9c;
+    }
+
+    .bonus-text {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #ffeb3b;
+        animation: flash 1s infinite alternate;
+        text-shadow: 0 0 10px #fff, 0 0 20px #ffeb3b;
+    }
+
+    @keyframes flash {
+        0% {color: #ffeb3b; text-shadow: 0 0 10px #fff, 0 0 20px #ffeb3b;}
+        50% {color: #ff4f9c; text-shadow: 0 0 20px #ff4f9c, 0 0 30px #ffeb3b;}
+        100% {color: #00fff6; text-shadow: 0 0 20px #00fff6, 0 0 30px #ffeb3b;}
+    }
+
+    p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+
+    .bonus-button {
+        display: inline-block;
+        padding: 15px 35px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(45deg, #ff4f9c, #b76eff, #0ff6f6);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(255,255,255,0.3);
+        transition: all 0.3s ease;
+    }
+
+    .bonus-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(255,255,255,0.6);
+        text-shadow: 0 0 10px #fff;
+    }
+
+    .bot-name {
+        font-weight: bold;
+        color: #00fff6;
+    }
+
     .countdown {
-      font-size: 1.5rem;
+        margin-top: 15px;
+        font-size: 1em;
+        color: #ffeb3b;
+        font-weight: bold;
+        text-shadow: 0 0 10px #fff;
     }
-  }
+
+    /* Subtle sparkle animation */
+    .sparkle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        border-radius: 50%;
+        animation: sparkleAnim 2s linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes sparkleAnim {
+        0% {transform: translateY(0px) scale(1);}
+        50% {transform: translateY(-10px) scale(1.3);}
+        100% {transform: translateY(0px) scale(1);}
+    }
 
 </style>
 </head>
 <body>
 
-<!-- Banner -->
-<img src="https://tkcapp.simdif.com/images/public/sd_6919402a8d965.jpg?no_cache=1763266124" alt="Gemini Casino Banner" class="banner">
-
-<!-- Hero Section -->
-<div class="hero">
-  <p>Exclusive Bonuses • Fast Drops • VIP Experience</p>
-  <h1>Freespins Friday!!!</h1>
-  <div class="countdown" id="timer">3d 19h 49m 24s</div>
-  <p>Every Friday at 8 PM MT, Gemini Casino drops a limited Free Spins code.</p>
-  <div class="info-box">
-    <ul>
-      <li>⚡ Codes disappear in seconds — you must be FAST.</li>
-      <li>⭐ Requires a valid Gemini Casino account.</li>
-      <li>💬 Codes are released only inside the official Telegram channel <a href="https://t.me/officialgeminicasino" target="_blank">@officialgeminicasino</a>.</li>
-    </ul>
-  </div>
+<div class="container">
+    <h1>🎰 Welcome to Gemini Casino! 🎰</h1>
+    <div class="bonus-text">200% MATCH BONUS!</div>
+    <p>Claim your bonus instantly using our Telegram bot <span class="bot-name">@matchbonusbot</span>!  
+    Click below to jump straight to the portal and start your winning streak.</p>
+    <a href="https://geminicasino.com/?registration=true&promo=FB888" class="bonus-button" target="_blank">Enter Bonus Portal</a>
+    <div class="countdown">Hurry! Offer ends in <span id="timer">10:00</span></div>
 </div>
 
-<!-- Bonus Schedule -->
-<div class="info-box">
-  <h2 class="subheadline">New Bonus Schedule Starting November 1st</h2>
-  <ul>
-    <li>🎁 Saturday 100% Deposit Match — Each Deposit From 9pm-10pm MST</li>
-    <li>🎁 Monday Reload Bonus — 50% First Deposit Match 8pm-9pm MST</li>
-    <li>🎁 Free Spin Has Returned — Free Spin Giveaway Fridays @8pm MST! They go fast!!!!</li>
-    <li>💎 Diamond Jackpot ($5992.00) & The Ultimate Progressive Jackpot ($284,549.00 and climbing!) Are Due To Go Off Anytime Now!</li>
-    <li>🪙 Any Spin Could Qualify You To Win Either One Or Both! 🤑</li>
-    <li>💵 You could be the next ultimate jackpot winner! What would you do with the money?</li>
-    <li>Hacksaw Gaming, newest addition from A to Z we have them all, live tables included.</li>
-    <li>No KYC EVER!! NO LIMITS!! YOU KEEP WHAT YOU WIN!!!</li>
-  </ul>
-</div>
-
-<!-- Bonus Button -->
-<div style="text-align:center;">
-  <a href="https://asmorath.github.io/gemini-webapp/" class="btn" target="_blank">Open Bonus Portal</a>
-</div>
-
-<!-- Jackpot Display -->
-<div class="jackpot">
-  Diamond Jackpot: <span>$5992.00</span><br>
-  Ultimate Progressive Jackpot: <span>$284,549.00</span>
-</div>
-
-<!-- Optional Image -->
-<div style="text-align:center; margin: 40px 0;">
-  <img src="https://tkcapp.simdif.com/images/public/sd_6919406a55295.jpg?no_cache=1763266174" alt="Gemini Casino Highlight" style="max-width:90%; height:auto; border-radius:8px;">
-</div>
-
-<!-- Countdown Script -->
+<!-- Sparkle effect -->
 <script>
-function startCountdown() {
-  const countdownElement = document.getElementById("timer");
-  // Example static countdown for demonstration
-  let days = 3, hours = 19, minutes = 49, seconds = 24;
-  
-  setInterval(() => {
-    seconds--;
-    if(seconds < 0){ seconds = 59; minutes--; }
-    if(minutes < 0){ minutes = 59; hours--; }
-    if(hours < 0){ hours = 23; days--; }
-    if(days < 0){ days=0; hours=0; minutes=0; seconds=0; }
-    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }, 1000);
-}
+    const body = document.body;
+    for(let i=0;i<40;i++){
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = Math.random() * window.innerWidth + 'px';
+        sparkle.style.top = Math.random() * window.innerHeight + 'px';
+        sparkle.style.animationDuration = 1 + Math.random() * 3 + 's';
+        sparkle.style.opacity = Math.random();
+        body.appendChild(sparkle);
+    }
 
-startCountdown();
+    // Countdown timer
+    let countdown = 600; // 10 minutes in seconds
+    const timerEl = document.getElementById('timer');
+
+    setInterval(() => {
+        const minutes = Math.floor(countdown / 60);
+        const seconds = countdown % 60;
+        timerEl.textContent = `${minutes}:${seconds.toString().padStart(2,'0')}`;
+        if(countdown > 0) countdown--;
+    }, 1000);
 </script>
 
 </body>
