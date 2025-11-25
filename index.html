@@ -1,150 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gemini Casino WebApp</title>
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Poppins", sans-serif;
-      background: #000;
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    h1 {
-      margin-top: 20px;
-      font-size: 2.2rem;
-      color: #71f7c5;
-      text-shadow: 0 0 12px #71f7c5;
-    }
-
-    .sub {
-      color: #d68bff;
-      font-size: 1rem;
-      margin-bottom: 25px;
-      text-shadow: 0 0 10px #d68bff;
-    }
-
-    .btn {
-      display: block;
-      width: 80%;
-      margin: 15px auto;
-      padding: 15px;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: #000;
-      background: linear-gradient(90deg, #00f2ff, #ff45d4);
-      box-shadow: 0 0 20px #00eaff;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-
-    .btn:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 25px #ff45d4;
-    }
-
-    .timer {
-      margin-top: 25px;
-      font-size: 1.4rem;
-      color: #ffd966;
-      text-shadow: 0 0 10px #ffd966;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      margin-top: 40px;
-      color: #ff9de6;
-      text-shadow: 0 0 12px #ff9de6;
-    }
-
-    .info-box {
-      width: 85%;
-      margin: 15px auto;
-      padding: 15px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 15px #333;
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Casino Bonuses</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <h1>Gemini Casino</h1>
-  <div class="sub">Exclusive Bonuses • Fast Drops • VIP Experience</div>
+  <!-- Banner -->
+  <header>
+    <img src="https://tkcapp.simdif.com/images/public/sd_6919402a8d965.jpg?no_cache=1763266124" alt="Gemini Casino Banner" class="banner">
+  </header>
 
-  <!-- BONUS BUTTON -->
-  <a class="btn"
-     href="https://geminicasino.com/?registration=true&promo=FB888"
-     target="_blank">
-     🎁 Claim Your 200% Bonus
-  </a>
+  <main>
+    <!-- Intro Section -->
+    <section class="intro">
+      <h2>Exclusive Bonuses • Fast Drops • VIP Experience</h2>
+      <h1 class="freespins-title">Freespins Friday!!!</h1>
+      <div id="countdown" class="countdown">Loading...</div>
+      <p>Every Friday at 8 PM Mountain Time, Gemini Casino drops a limited Free Spins code.</p>
+      <ul>
+        <li>⚡ Codes disappear in seconds — you must be FAST.</li>
+        <li>⭐ Requires a valid Gemini Casino account.</li>
+        <li>💬 Codes are released only inside the official Telegram channel.</li>
+      </ul>
+      <div class="buttons">
+        <a href="https://asmorath.github.io/gemini-webapp/" class="btn">Open Bonus Portal</a>
+        <a href="https://geminicasino.com/?registration=true&promo=FB888" class="btn">Claim Bonus Now</a>
+      </div>
+    </section>
 
-  <!-- OFFICIAL CHANNEL -->
-  <a class="btn"
-     href="https://t.me/officialgeminicasino"
-     target="_blank">
-     💎 Join Official Gemini Casino Channel
-  </a>
+    <!-- Bonus Schedule Section -->
+    <section class="bonus-schedule">
+      <h2>🗓 New Bonus Schedule Starting November 1st</h2>
+      <ul>
+        <li>🎁 Saturday 100% Deposit Match — Each Deposit From 9pm-10pm MST</li>
+        <li>🎁 Monday Reload Bonus — 50% First Deposit Match, 8pm-9pm MST</li>
+        <li>🎁 Free Spin Has Returned — Free Spin Giveaway Fridays @8pm MST! They go fast!!!!</li>
+      </ul>
+    </section>
 
-  <!-- FREESPINS FRIDAY -->
-  <h2 class="section-title">Freespins Friday Countdown</h2>
+    <!-- Jackpots Section -->
+    <section class="jackpots">
+      <h2>💎 Diamond Jackpot ($5992.00) & The Ultimate Progressive Jackpot ($284,549.00 and climbing!) Are Due To Go Off Anytime Now!</h2>
+      <p>🪙 Any Spin Could Qualify You To Win Either One Or Both! 🤑</p>
+      <p>💵 You could be the next ultimate jackpot winner! What would you do with the money?</p>
+    </section>
 
-  <div class="timer" id="countdown">Loading...</div>
+    <!-- Info Section -->
+    <section class="info">
+      <p>Hacksaw Gaming, newest addition from A to Z we have them all, live tables.</p>
+      <p>No KYC EVER!! NO LIMITS!! YOU KEEP WHAT YOU WIN!!!</p>
+    </section>
 
-  <div class="info-box">
-    Every Friday at <b>8 PM Mountain Time</b>, Gemini Casino drops a limited Free Spins code.<br><br>
-    ⚡ Codes disappear in seconds — you must be FAST.<br>
-    ⭐ Requires a valid Gemini Casino account.<br>
-    💬 Codes are released only inside the official Telegram channel.
-  </div>
+    <!-- Promo Image -->
+    <section class="promo-image">
+      <img src="https://tkcapp.simdif.com/images/public/sd_6919406a55295.jpg?no_cache=1763266174" alt="Gemini Casino Promo">
+    </section>
+  </main>
 
-  <script>
-    function getNextFriday8PM() {
-      const now = new Date();
-      const result = new Date(now);
-
-      result.setUTCHours(2, 0, 0, 0); // 8PM MT = 2AM UTC (next day)
-      result.setDate(now.getDate() + ((5 - now.getDay() + 7) % 7));
-
-      if (result < now) {
-        result.setDate(result.getDate() + 7);
-      }
-
-      return result;
-    }
-
-    function updateCountdown() {
-      const target = getNextFriday8PM();
-      const now = new Date();
-      const diff = target - now;
-
-      if (diff <= 0) {
-        document.getElementById("countdown").innerText = "Happening NOW! Go claim!";
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const mins = Math.floor((diff / (1000 * 60)) % 60);
-      const secs = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("countdown").innerHTML =
-        `${days}d ${hours}h ${mins}m ${secs}s`;
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
