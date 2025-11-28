@@ -1,809 +1,308 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gemini Casino - Exclusive Bonuses & Free Spins | @matchbonusbot</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Gemini Casino — Bonus Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  :root{
+    --bg:#000;
+    --neon-green: #00d13a;
+    --neon-cyan: #00e6ff;
+    --neon-pink: #ff3ecb;
+    --neon-purple: #8e2cff;
+    --neon-gold: #ffd24a;
+    --muted:#c7ffe0;
+    --glass: rgba(255,255,255,0.04);
+    --card-radius:18px;
+  }
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #000000;
-    color: #ffffff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-}
+  html,body{height:100%;margin:0;background:var(--bg);color:#dfffe6;font-family:Montserrat,system-ui,Arial;}
+  .wrap{max-width:1100px;margin:18px auto;padding:18px;display:flex;flex-direction:column;gap:16px;}
+  header{display:flex;align-items:center;gap:16px;}
+  .brand {
+    display:flex;align-items:center;gap:12px;
+  }
+  .logo-chip{
+    width:68px;height:68px;border-radius:12px;background:linear-gradient(180deg,#00c13a,#008f1f);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,200,80,0.12), inset 0 -6px 12px rgba(0,0,0,0.35);
+    position:relative;
+  }
+  .logo-chip::after{
+    content:"gc";font-weight:800;font-family:Montserrat, sans-serif;color:white;font-size:28px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.4);
+  }
+  .title{
+    display:flex;flex-direction:column;
+  }
+  .title h1{margin:0;font-size:20px;font-weight:800;color:#fff;letter-spacing:0.5px;text-transform:lowercase;}
+  .title .tagline{font-family:'Playfair Display', serif;color:var(--neon-green);font-size:28px;line-height:1;margin-top:4px;text-shadow:0 4px 18px rgba(0,200,80,0.12);}
 
-/* Top Banner */
-.top-banner {
-    width: 100%;
-    background: #000;
-    position: relative;
-}
+  /* Hero poster style */
+  .poster{
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+    border-radius:var(--card-radius);padding:20px;display:flex;flex-direction:column;align-items:center;gap:14px;box-shadow:0 8px 40px rgba(0,0,0,0.6), 0 0 40px rgba(0,200,80,0.03);
+  }
 
-.top-banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 400px;
-    object-fit: cover;
-}
+  .big-headline{
+    font-family:'Playfair Display', serif;
+    color:#fff;font-size:56px;text-align:center;margin:6px 0 0 0;letter-spacing:2px;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.8);
+  }
+  .sub-swash{color:var(--neon-green);font-size:40px; margin-top:-6px;font-weight:700; text-decoration: none; text-shadow:0 8px 30px rgba(0,200,80,0.12);}
+  .chips-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
 
-/* Gradient background */
-.gradient-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(96, 165, 250, 0.1) 0%, transparent 50%);
-}
+  /* Bonuses card */
+  .bonus-grid{
+    width:100%;display:grid;grid-template-columns:1fr 320px;gap:16px;
+  }
+  .bonus-list{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+    padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+  }
+  .bonus-item{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.03);}
+  .bonus-item:last-child{border-bottom:none;}
+  .badge{background:var(--neon-green);color:#021;min-width:56px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 6px 18px rgba(0,200,80,0.12);}
+  .bonus-item h3{margin:0;font-size:16px;font-weight:800;color:#fff;}
+  .bonus-item p{margin:4px 0 0 0;color:rgba(255,255,255,0.72);font-size:14px;}
 
-.gradient-orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.3;
-    animation: float 25s ease-in-out infinite;
-    z-index: 0;
-    pointer-events: none;
-}
+  /* Countdown area */
+  .countdown-card{background:linear-gradient(135deg, rgba(14,14,14,0.9), rgba(0,0,0,0.6));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .countdown-title{font-weight:800;color:var(--neon-gold);margin-bottom:8px;}
+  .countdown-large{font-size:34px;font-weight:800;color:var(--neon-green);letter-spacing:2px;}
+  .cd-grid{display:flex;gap:12px;margin-top:8px;}
+  .cd-cell{min-width:60px;background:var(--glass);padding:10px;border-radius:8px;text-align:center;font-weight:800;}
+  .cd-cell .n{font-size:20px;color:#fff;}
+  .cd-cell .t{font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-top:4px;}
 
-.orb-1 {
-    width: 500px;
-    height: 500px;
-    top: -150px;
-    left: -150px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    animation-delay: 0s;
-}
+  /* Jackpots */
+  .jackpot-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
+  .jackpot{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;min-width:220px;text-align:center;border:1px solid rgba(255,255,255,0.03);}
+  .jackpot .label{font-size:12px;color:rgba(255,255,255,0.7);text-transform:uppercase;}
+  .jackpot .amt{font-size:22px;font-weight:900;color:var(--neon-pink);text-shadow:0 8px 30px rgba(140,44,255,0.06);}
 
-.orb-2 {
-    width: 400px;
-    height: 400px;
-    bottom: -100px;
-    right: -100px;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    animation-delay: -7s;
-}
+  /* Features & CTA */
+  .features{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-top:6px;}
+  .features ul{margin:0;padding:0 8px 0 20px;}
+  .features li{list-style:disc;margin:6px 0;color:rgba(255,255,255,0.78);font-weight:600;}
+  .cta{
+    display:flex;gap:12px;align-items:center;justify-content:center;margin-top:12px;
+  }
+  .btn-primary{
+    background:linear-gradient(90deg,var(--neon-green), #00f5a1);
+    color:#021;padding:12px 18px;border-radius:12px;font-weight:900;border:none;font-size:16px;text-decoration:none;box-shadow:0 12px 40px rgba(0,200,80,0.14);
+  }
+  .btn-secondary{
+    background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;
+  }
 
-.orb-3 {
-    width: 450px;
-    height: 450px;
-    top: 50%;
-    right: 10%;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    animation-delay: -14s;
-}
+  footer{color:rgba(255,255,255,0.4);font-size:13px;padding:8px 6px;margin-top:10px;text-align:center;}
 
-@keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(40px, -40px) scale(1.1); }
-    50% { transform: translate(-30px, 30px) scale(0.9); }
-    75% { transform: translate(30px, 40px) scale(1.05); }
-}
-
-/* Container */
-.container {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Features Strip */
-.features-strip {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px 0;
-    margin-bottom: 60px;
-}
-
-.features-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.features-content span {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.features-content span::before {
-    content: '•';
-    margin-right: 12px;
-    color: #a78bfa;
-    font-size: 20px;
-}
-
-/* Main Card */
-.main-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    border-radius: 24px;
-    padding: 48px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    margin-bottom: 40px;
-    position: relative;
-    overflow: hidden;
-}
-
-.main-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.1) 20%, 
-        rgba(255, 255, 255, 0.3) 50%, 
-        rgba(255, 255, 255, 0.1) 80%, 
-        transparent);
-}
-
-/* Free Spins Section */
-.freespins-header {
-    text-align: center;
-    margin-bottom: 32px;
-}
-
-.freespins-title {
-    font-size: 42px;
-    font-weight: 900;
-    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 24px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    animation: shimmer 3s ease-in-out infinite;
-    background-size: 200% auto;
-}
-
-@keyframes shimmer {
-    0%, 100% { background-position: 0% center; }
-    50% { background-position: 100% center; }
-}
-
-/* Countdown Timer */
-.countdown-timer {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-}
-
-.timer-unit {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 20px 24px;
-    min-width: 100px;
-    text-align: center;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-.timer-value {
-    font-size: 48px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-    margin-bottom: 8px;
-}
-
-.timer-label {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-/* Description Text */
-.description {
-    font-size: 16px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 24px;
-    text-align: center;
-}
-
-/* Info Box */
-.info-box {
-    background: rgba(167, 139, 250, 0.1);
-    border: 1px solid rgba(167, 139, 250, 0.2);
-    border-radius: 16px;
-    padding: 24px;
-    margin: 32px 0;
-}
-
-.info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 16px;
-    font-size: 15px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.info-item:last-child {
-    margin-bottom: 0;
-}
-
-.info-icon {
-    font-size: 20px;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-/* Schedule Section */
-.schedule-title {
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 24px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.schedule-item {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 16px;
-    transition: all 0.3s ease;
-}
-
-.schedule-item:hover {
-    background: rgba(255, 255, 255, 0.06);
-    transform: translateX(4px);
-}
-
-.schedule-emoji {
-    font-size: 24px;
-    margin-right: 12px;
-}
-
-.schedule-name {
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 4px;
-}
-
-.schedule-details {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-}
-
-/* Jackpot Section */
-.jackpot-section {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 140, 0, 0.1) 100%);
-    border: 2px solid rgba(255, 215, 0, 0.3);
-    border-radius: 16px;
-    padding: 32px;
-    margin: 32px 0;
-    text-align: center;
-}
-
-.jackpot-title {
-    font-size: 24px;
-    font-weight: 800;
-    color: #ffd700;
-    margin-bottom: 16px;
-}
-
-.jackpot-amount {
-    font-size: 36px;
-    font-weight: 900;
-    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ff8c00 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 8px 0;
-}
-
-.jackpot-text {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-    margin: 12px 0;
-}
-
-/* Features List */
-.features-list {
-    margin: 32px 0;
-    text-align: center;
-}
-
-.feature-item {
-    font-size: 17px;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* CTA Section */
-.cta-section {
-    text-align: center;
-    margin: 48px 0;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 20px 48px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffffff;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
-        0 8px 24px rgba(102, 126, 234, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    position: relative;
-    overflow: hidden;
-    letter-spacing: 0.5px;
-    margin: 10px;
-}
-
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 12px 32px rgba(102, 126, 234, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.cta-button:hover::before {
-    left: 100%;
-}
-
-.telegram-button {
-    background: linear-gradient(135deg, #0088cc 0%, #00a8e8 100%);
-    box-shadow: 
-        0 8px 24px rgba(0, 136, 204, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.telegram-button:hover {
-    box-shadow: 
-        0 12px 32px rgba(0, 136, 204, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-/* Promo Image */
-.promo-image {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.promo-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* Video Section */
-.video-section {
-    margin: 60px 0;
-    text-align: center;
-}
-
-.video-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-.video-container iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: none;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 14px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .main-card {
-        padding: 32px 24px;
-    }
-    
-    .freespins-title {
-        font-size: 32px;
-    }
-    
-    .timer-value {
-        font-size: 36px;
-    }
-    
-    .timer-unit {
-        min-width: 80px;
-        padding: 16px 20px;
-    }
-    
-    .schedule-title {
-        font-size: 24px;
-    }
-    
-    .jackpot-amount {
-        font-size: 28px;
-    }
-    
-    .features-content {
-        gap: 20px;
-        font-size: 14px;
-    }
-    
-    .cta-button {
-        padding: 16px 36px;
-        font-size: 16px;
-        width: 100%;
-        margin: 8px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .freespins-title {
-        font-size: 28px;
-    }
-    
-    .countdown-timer {
-        gap: 12px;
-    }
-    
-    .timer-unit {
-        min-width: 70px;
-        padding: 12px 16px;
-    }
-    
-    .timer-value {
-        font-size: 32px;
-    }
-    
-    .timer-label {
-        font-size: 12px;
-    }
-}
-
-/* Floating particles */
-.particle {
-    position: fixed;
-    width: 3px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-    animation: particle-float linear infinite;
-}
-
-@keyframes particle-float {
-    0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh) translateX(20px);
-        opacity: 0;
-    }
-}
+  /* responsive */
+  @media (max-width:880px){
+    .bonus-grid{grid-template-columns:1fr; }
+    .big-headline{font-size:40px;}
+    .title .tagline{font-size:24px;}
+    .logo-chip{width:58px;height:58px;}
+  }
+  @media (max-width:420px){
+    .big-headline{font-size:32px;}
+    .sub-swash{font-size:26px;}
+    .cd-cell{min-width:50px;padding:8px;}
+  }
 </style>
 </head>
 <body>
-
-<!-- Gradient background -->
-<div class="gradient-bg"></div>
-<div class="gradient-orb orb-1"></div>
-<div class="gradient-orb orb-2"></div>
-<div class="gradient-orb orb-3"></div>
-
-<!-- Top Banner -->
-<div class="top-banner">
-    <img src="https://tkcapp.simdif.com/images/public/sd_6919402a8d965.jpg?no_cache=1763266124" alt="Gemini Casino Banner">
-</div>
-
-<!-- Features Strip -->
-<div class="features-strip">
-    <div class="features-content">
-        <span>Exclusive Bonuses</span>
-        <span>Fast Drops</span>
-        <span>VIP Experience</span>
-    </div>
-</div>
-
-<!-- Main Content -->
-<div class="container">
-    
-    <!-- Free Spins Friday -->
-    <div class="main-card">
-        <div class="freespins-header">
-            <h1 class="freespins-title">Freespins Friday!!!</h1>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo-chip" aria-hidden="true"></div>
+        <div class="title">
+          <h1>gemini casino</h1>
+          <div class="tagline">NO KYC • NO LIMITS</div>
         </div>
-        
-        <div class="countdown-timer" id="countdown">
-            <div class="timer-unit">
-                <div class="timer-value" id="days">0</div>
-                <div class="timer-label">Days</div>
-            </div>
-            <div class="timer-unit">
-                <div class="timer-value" id="hours">0</div>
-                <div class="timer-label">Hours</div>
-            </div>
-            <div class="timer-unit">
-                <div class="timer-value" id="minutes">0</div>
-                <div class="timer-label">Minutes</div>
-            </div>
-            <div class="timer-unit">
-                <div class="timer-value" id="seconds">0</div>
-                <div class="timer-label">Seconds</div>
-            </div>
-        </div>
-        
-        <p class="description">
-            Every Friday at 8 PM Mountain Time, Gemini Casino drops a limited Free Spins code.
-        </p>
-        
-        <div class="info-box">
-            <div class="info-item">
-                <span class="info-icon">⚡</span>
-                <span>Codes disappear in seconds — you must be FAST.</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon">⭐</span>
-                <span>Requires a valid Gemini Casino account.</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon">💬</span>
-                <span>Codes are released only inside the official Telegram channel.</span>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Schedule -->
-    <div class="main-card">
-        <h2 class="schedule-title">🗓 New Bonus Schedule Starting November 1st</h2>
-        
-        <div class="schedule-item">
+      </div>
+      <div style="margin-left:auto;color:rgba(255,255,255,0.6);font-weight:700;">Fast deposits • Fast payouts</div>
+    </header>
+
+    <section class="poster" role="banner" aria-label="Gemini Casino Bonus Portal">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="big-headline">NO KYC • NO LIMITS</div>
+        <div class="sub-swash">Gemini Casino</div>
+      </div>
+
+      <div class="bonus-grid" aria-live="polite">
+        <div class="bonus-list">
+          <div style="font-weight:900;font-size:16px;color:var(--neon-cyan);margin-bottom:10px;">Bonus Schedule (New schedule starts Nov 1st)</div>
+
+          <div class="bonus-item">
+            <div class="badge">Sat</div>
             <div>
-                <span class="schedule-emoji">🎁</span>
-                <span class="schedule-name">Saturday 100% Deposit Match</span>
+              <h3>🎁 Saturday 100% Deposit Match</h3>
+              <p>Each deposit from 9pm–10pm MST — 100% match instantly applied.</p>
             </div>
-            <div class="schedule-details">
-                Each Deposit From 9pm-10pm MST
-            </div>
-        </div>
-        
-        <div class="schedule-item">
-            <div>
-                <span class="schedule-emoji">🎁</span>
-                <span class="schedule-name">Monday Reload Bonus</span>
-            </div>
-            <div class="schedule-details">
-                50% First Deposit Match<br>
-                8pm-9pm MST
-            </div>
-        </div>
-        
-        <div class="schedule-item">
-            <div>
-                <span class="schedule-emoji">🎁</span>
-                <span class="schedule-name">Free Spin Has Returned</span>
-            </div>
-            <div class="schedule-details">
-                Free Spin Giveaway Fridays @8pm MST! They go fast!!!!
-            </div>
-        </div>
-    </div>
-    
-    <!-- Jackpots -->
-    <div class="jackpot-section">
-        <div class="jackpot-title">💎 PROGRESSIVE JACKPOTS 💎</div>
-        <div class="jackpot-text">
-            <strong>Diamond Jackpot</strong>
-            <div class="jackpot-amount">$5,992.00</div>
-        </div>
-        <div class="jackpot-text">
-            <strong>The Ultimate Progressive Jackpot</strong>
-            <div class="jackpot-amount">$284,549.00</div>
-            <div style="font-size: 14px; color: rgba(255,255,255,0.8); margin-top: 8px;">and climbing!</div>
-        </div>
-        <div class="jackpot-text" style="margin-top: 24px; font-size: 18px; font-weight: 700;">
-            Are Due To Go Off Anytime Now!
-        </div>
-        <div class="jackpot-text">
-            🪙 Any Spin Could Qualify You To Win Either One Or Both! 🤑
-        </div>
-        <div class="jackpot-text" style="font-size: 19px; font-weight: 700;">
-            💵 You could be the next ultimate jackpot winner! What would you do with the money?
-        </div>
-    </div>
-    
-    <!-- Features -->
-    <div class="features-list">
-        <div class="feature-item">🎮 Hacksaw Gaming - Newest Addition</div>
-        <div class="feature-item">🎰 A to Z - We Have Them All</div>
-        <div class="feature-item">🎲 Live Tables</div>
-        <div class="feature-item">🚫 No KYC EVER!!</div>
-        <div class="feature-item">♾️ NO LIMITS!!</div>
-        <div class="feature-item">💰 YOU KEEP WHAT YOU WIN!!!</div>
-    </div>
-    
-    <!-- Promo Image -->
-    <div class="promo-image">
-        <img src="https://tkcapp.simdif.com/images/public/sd_6919406a55295.jpg?no_cache=1763266174" alt="Gemini Casino Promo">
-    </div>
-    
-    <!-- CTA Buttons -->
-    <div class="cta-section">
-        <a href="https://geminicasino.com/?registration=true&promo=FB888" class="cta-button" target="_blank">
-            🎰 Join Gemini Casino Now
-        </a>
-        <a href="https://t.me/matchbonusbot" class="cta-button telegram-button" target="_blank">
-            ✈ Start @matchbonusbot
-        </a>
-    </div>
-    
-    <!-- Video Section -->
-    <div class="video-section">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/xM7AFnfgAtw?si=dqftgF2o5BJS9vs8" allowfullscreen></iframe>
-        </div>
-    </div>
-    
-</div>
+          </div>
 
-<!-- Footer -->
-<div class="footer">
-    <p>© 2024 Gemini Casino. Play responsibly. 18+</p>
-</div>
+          <div class="bonus-item">
+            <div class="badge">Mon</div>
+            <div>
+              <h3>🎁 Monday Reload Bonus</h3>
+              <p>50% first deposit match — 8pm–9pm MST. Reload and keep playing.</p>
+            </div>
+          </div>
+
+          <div class="bonus-item">
+            <div class="badge">Fri</div>
+            <div>
+              <h3>🎁 Free Spin Fridays</h3>
+              <p>Free Spin Giveaway Fridays @ 8pm MST. They go fast — be there!</p>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;padding-top:10px;border-top:1px dashed rgba(255,255,255,0.03);">
+            <div style="font-weight:900;margin-bottom:6px;color:var(--neon-gold)">Features</div>
+            <ul>
+              <li>LIVE progressive jackpots — Any spin could qualify</li>
+              <li>Hacksaw Gaming added, A–Z providers available</li>
+              <li>No KYC ever • No limits • You keep what you win</li>
+            </ul>
+          </div>
+
+          <div class="cta" style="margin-top:14px;justify-content:flex-start;">
+            <a class="btn-primary" id="register" href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank" rel="noopener">Register & Get 200% Match</a>
+            <a class="btn-secondary" href="#jackpots">View Jackpots</a>
+          </div>
+        </div>
+
+        <!-- Right column: countdown & jackpots -->
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="countdown-card" role="timer" aria-atomic="true" aria-label="Countdown to next Free Spin Friday">
+            <div class="countdown-title">Free Spin Giveaway — Next Drop</div>
+            <div class="countdown-large">Fridays • 8PM MST</div>
+
+            <div class="cd-grid" style="margin-top:10px;">
+              <div class="cd-cell"><div class="n" id="cd-days">--</div><div class="t">Days</div></div>
+              <div class="cd-cell"><div class="n" id="cd-hours">--</div><div class="t">Hours</div></div>
+              <div class="cd-cell"><div class="n" id="cd-mins">--</div><div class="t">Minutes</div></div>
+              <div class="cd-cell"><div class="n" id="cd-secs">--</div><div class="t">Seconds</div></div>
+            </div>
+
+            <div style="font-size:12px;color:rgba(255,255,255,0.6);margin-top:10px;">Show starts @ 8pm MST — join the giveaway in the lobby!</div>
+            <div style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.7)">Tip: join 5 minutes early — spins go fast 🔥</div>
+          </div>
+
+          <div id="jackpots" class="countdown-card" style="padding:12px;">
+            <div style="font-weight:900;color:var(--neon-cyan);">💎 Progressive Jackpots 💎</div>
+            <div class="jackpot-row">
+              <div class="jackpot">
+                <div class="label">Diamond Jackpot</div>
+                <div class="amt" id="jack-diamond">$5,992.00</div>
+              </div>
+              <div class="jackpot">
+                <div class="label">Ultimate Progressive</div>
+                <div class="amt" id="jack-ultimate">$284,549.00</div>
+              </div>
+            </div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.75);margin-top:10px;">Are due to go off anytime now — any spin could qualify!</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="width:100%;margin-top:10px;">
+        <div style="font-size:13px;color:rgba(255,255,255,0.8);text-align:center;padding:8px;">New users register here and get the 200% match instantly applied.</div>
+      </div>
+
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between;">
+        <div style="flex:1">
+          <h3 style="margin:6px 0;color:var(--neon-green)">Why Gemini?</h3>
+          <p style="margin:0;color:rgba(255,255,255,0.8);max-width:820px;">
+            Fast deposits, fast payouts. No lengthy KYC, no withdrawal hurdles — just clean, rapid processing so players can cash out and keep playing. Play live tables, slots, and new providers like Hacksaw Gaming. Big jackpots, big excitement.
+          </p>
+        </div>
+
+        <div style="min-width:220px;text-align:center;">
+          <a class="btn-primary" href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank" rel="noopener">Claim 200% Bonus</a>
+        </div>
+      </div>
+      <footer>
+        Gemini Casino — No KYC • No Limits • You keep what you win. Promo subject to terms. This is a demo portal for promotional use.
+      </footer>
+    </section>
+  </div>
 
 <script>
-// Create floating particles
-function createParticles() {
-    const particleCount = 30;
-    for(let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDuration = (15 + Math.random() * 15) + 's';
-        particle.style.animationDelay = Math.random() * 5 + 's';
-        document.body.appendChild(particle);
-    }
+/* ---------- Countdown to next Friday 8:00 PM MST ---------- */
+/* MST is treated as UTC-7 per requirement (fixed offset). */
+function nextFriday8pmMST(){
+  const now = new Date();
+  const nowUTCday = now.getUTCDay(); // 0 Sun..6 Sat
+  // target weekday is Friday => 5
+  let daysUntil = (5 - nowUTCday + 7) % 7;
+  // if today is Friday, we must ensure target time hasn't already passed in MST
+  // compute candidate target UTC time by applying MST offset (-7)
+  let candidateUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + daysUntil, 20 + 7, 0, 0); // 20 MST -> UTC = 27 (20+7)
+  if(candidateUTC <= now.getTime()){
+    // it's already passed this week: schedule next week
+    candidateUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + daysUntil + 7, 20 + 7, 0, 0);
+  }
+  return new Date(candidateUTC);
 }
 
-createParticles();
+function updateCountdown(){
+  const target = nextFriday8pmMST();
+  const now = new Date();
+  let diff = Math.max(0, target - now);
+  const days = Math.floor(diff / (1000*60*60*24));
+  diff -= days * (1000*60*60*24);
+  const hours = Math.floor(diff / (1000*60*60));
+  diff -= hours * (1000*60*60);
+  const mins = Math.floor(diff / (1000*60));
+  diff -= mins * (1000*60);
+  const secs = Math.floor(diff/1000);
 
-// Countdown Timer to next Friday 8 PM MST
-function updateCountdown() {
-    const now = new Date();
-    
-    // Convert current time to MST (UTC-7)
-    const mstOffset = -7 * 60; // MST is UTC-7
-    const currentMST = new Date(now.getTime() + (now.getTimezoneOffset() + mstOffset) * 60000);
-    
-    // Find next Friday at 8 PM MST
-    let nextFriday = new Date(currentMST);
-    nextFriday.setHours(20, 0, 0, 0); // Set to 8 PM
-    
-    // Get day of week (0 = Sunday, 5 = Friday)
-    const currentDay = currentMST.getDay();
-    const daysUntilFriday = (5 - currentDay + 7) % 7;
-    
-    // If it's Friday but past 8 PM, or any other day, find next Friday
-    if (currentDay === 5 && currentMST.getHours() >= 20) {
-        nextFriday.setDate(nextFriday.getDate() + 7);
-    } else if (currentDay !== 5 || currentMST.getHours() < 20) {
-        nextFriday.setDate(nextFriday.getDate() + daysUntilFriday);
-    }
-    
-    // Calculate difference
-    const diff = nextFriday - currentMST;
-    
-    if (diff > 0) {
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        
-        document.getElementById('days').textContent = days;
-        document.getElementById('hours').textContent = hours;
-        document.getElementById('minutes').textContent = minutes;
-        document.getElementById('seconds').textContent = seconds;
-    } else {
-        document.getElementById('days').textContent = '0';
-        document.getElementById('hours').textContent = '0';
-        document.getElementById('minutes').textContent = '0';
-        document.getElementById('seconds').textContent = '0';
-    }
+  document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
 }
 
-// Update countdown every second
+/* ---------- Jackpot micro-animation (simple incremental illusion) ---------- */
+function animateJackpots(){
+  const diamondEl = document.getElementById('jack-diamond');
+  const ultimateEl = document.getElementById('jack-ultimate');
+
+  // base amounts (could be fetched from API in production)
+  let diamond = 5992.00;
+  let ultimate = 284549.00;
+
+  // Small random increments to create motion
+  setInterval(() => {
+    const ddelta = (Math.random()*6); // 0-6 dollars
+    const udelta = (Math.random()*45); // 0-45 dollars
+    diamond += ddelta;
+    ultimate += udelta;
+    diamondEl.textContent = formatMoney(diamond);
+    ultimateEl.textContent = formatMoney(ultimate);
+  }, 3000);
+}
+
+function formatMoney(n){
+  // show with commas and two decimals
+  return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+/* init */
 updateCountdown();
 setInterval(updateCountdown, 1000);
+animateJackpots();
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+/* accessibility: announce countdown on tab focus for screen readers */
+window.addEventListener('focus', updateCountdown);
 </script>
-
 </body>
 </html>
