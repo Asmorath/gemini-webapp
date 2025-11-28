@@ -2,203 +2,176 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Gemini Casino — Bonus Portal</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Gemini Casino Bonus Portal</title>
 
 <style>
-  :root{
-    --bg:#000;
-    --green:#00ff6a;
-    --cyan:#00e6ff;
-    --pink:#ff3ecb;
-    --purple:#8e2cff;
-    --gold:#ffd24a;
-  }
-
-  body{
+  body {
     margin:0;
-    background:var(--bg);
-    font-family:Montserrat, sans-serif;
-    color:white;
+    background:#000;
+    font-family:Arial, sans-serif;
+    color:#fff;
   }
 
-  .container{
-    max-width:1100px;
+  .container {
+    max-width: 800px;
     margin:auto;
-    padding:20px;
+    padding:15px;
   }
 
   /* HERO IMAGE */
-  .hero{
+  .hero img {
     width:100%;
-    border-radius:14px;
-    overflow:hidden;
-    box-shadow:0 0 40px rgba(0,255,140,0.2);
-  }
-  .hero img{
-    width:100%;
+    height:auto;
+    border-radius:10px;
     display:block;
   }
 
-  /* BONUS SCHEDULE */
-  h1{
-    font-size:30px;
-    margin-top:25px;
-    font-weight:800;
-    color:var(--green);
+  /* TITLES */
+  h1 {
     text-align:center;
+    color:#00ff6a;
+    font-size:22px;
+    margin:20px 0 10px;
   }
 
-  .bonus-card{
-    background:#0d0d0d;
-    padding:20px;
-    border-radius:12px;
-    margin-top:20px;
-    border:1px solid rgba(255,255,255,0.08);
+  /* BONUS SECTION */
+  .bonus-card {
+    background:#111;
+    border:1px solid #222;
+    padding:15px;
+    border-radius:10px;
   }
 
-  .bonus-item{
-    margin-bottom:18px;
+  .bonus-item {
+    margin-bottom:15px;
   }
 
-  .bonus-item h3{
-    margin:0 0 4px 0;
-    color:var(--cyan);
-    font-size:18px;
-  }
-
-  .bonus-item p{
+  .bonus-item h3 {
     margin:0;
+    color:#00e6ff;
+    font-size:16px;
+    font-weight:bold;
+  }
+
+  .bonus-item p {
+    margin:3px 0 0;
     color:#ccc;
     font-size:14px;
   }
 
-  /* FREE SPIN IMAGE SECTION */
-  .free-spin-img{
+  /* FREE SPIN IMAGE */
+  .free-spin-img img {
     width:100%;
-    margin-top:22px;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 0 35px rgba(255,215,0,0.15);
-  }
-  .free-spin-img img{
-    width:100%;
+    height:auto;
+    margin-top:15px;
+    border-radius:10px;
   }
 
   /* COUNTDOWN */
-  .countdown-box{
-    background:#0d0d0d;
-    padding:20px;
-    border-radius:12px;
-    margin-top:20px;
-    border:1px solid rgba(255,255,255,0.08);
+  .countdown-box {
+    background:#111;
+    border:1px solid #222;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
     text-align:center;
   }
 
-  .countdown-title{
-    font-weight:800;
-    color:var(--gold);
-    font-size:20px;
-    margin-bottom:10px;
-  }
-
-  .countdown-grid{
+  .countdown-grid {
     display:flex;
-    gap:15px;
     justify-content:center;
+    gap:10px;
     margin-top:10px;
   }
 
-  .cd-cell{
-    background:rgba(255,255,255,0.05);
-    padding:12px 15px;
-    border-radius:10px;
-    min-width:60px;
+  .cd {
+    background:#222;
+    padding:10px;
+    border-radius:8px;
+    min-width:55px;
   }
 
-  .cd-cell .num{
-    font-size:22px;
-    font-weight:800;
+  .num {
+    font-size:20px;
+    font-weight:bold;
   }
-  .cd-cell .lab{
-    font-size:12px;
-    opacity:0.7;
-    margin-top:4px;
+
+  .label {
+    font-size:11px;
+    color:#aaa;
   }
 
   /* JACKPOTS */
-  .jackpots{
-    margin-top:30px;
-    background:#0d0d0d;
-    padding:20px;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,0.08);
-  }
-
-  .jack-title{
-    font-size:22px;
-    color:var(--cyan);
-    text-align:center;
-    font-weight:800;
-    margin-bottom:14px;
-  }
-
-  .jackpot-row{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-  }
-
-  .jackpot{
-    background:rgba(255,255,255,0.05);
-    padding:12px 20px;
+  .jackpots {
+    background:#111;
+    border:1px solid #222;
+    padding:15px;
+    margin-top:20px;
     border-radius:10px;
-    min-width:220px;
+  }
+
+  .jack-row {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .jack-item {
+    background:#222;
+    padding:10px;
+    border-radius:8px;
     text-align:center;
   }
 
-  .jack-label{
+  .jack-label {
     font-size:13px;
-    opacity:0.7;
+    color:#ccc;
   }
 
-  .jack-amount{
-    font-size:22px;
-    color:var(--pink);
-    font-weight:900;
-    margin-top:5px;
+  .jack-amount {
+    font-size:20px;
+    margin-top:4px;
+    color:#ff3ecb;
+    font-weight:bold;
   }
 
   /* CTA */
-  .cta-btn{
-    display:block;
-    margin:25px auto;
-    width:max-content;
-    padding:14px 22px;
-    background:linear-gradient(90deg,var(--green),#00ffaa);
-    color:#000;
-    font-weight:900;
-    font-size:18px;
-    border-radius:12px;
-    text-decoration:none;
-    box-shadow:0 0 30px rgba(0,255,120,0.22);
+  .cta {
+    text-align:center;
+    margin-top:20px;
   }
 
+  .cta a {
+    display:inline-block;
+    background:#00ff6a;
+    color:#000;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
+    text-decoration:none;
+    font-size:18px;
+  }
+
+  /* NEW BOTTOM IMAGE */
+  .bottom-banner img {
+    width:100%;
+    height:auto;
+    margin-top:15px;
+    border-radius:10px;
+    display:block;
+  }
 </style>
 </head>
 <body>
 
 <div class="container">
 
-  <!-- HERO IMAGE FROM SIMDIF -->
+  <!-- HERO IMAGE -->
   <div class="hero">
-    <img src="https://tkcapp.simdif.com/images/public/sd_6929a3739b2e3.png?no_cache=1764336509" alt="Gemini Casino Hero">
+    <img src="https://tkcapp.simdif.com/images/public/sd_69254be99164b.jpg?no_cache=1764055556" alt="Gemini Casino Hero">
   </div>
 
-  <!-- BONUS SCHEDULE -->
   <h1>New Bonus Schedule — Starting November 1st</h1>
 
   <div class="bonus-card">
@@ -214,132 +187,122 @@
     </div>
 
     <div class="bonus-item">
-      <h3>🎁 Free Spin Fridays Has Returned!!</h3>
-      <p>Free Spin Giveaway Fridays @ 8pm MST! They go fast!!!!</p>
+      <h3>🎁 Free Spin Fridays</h3>
+      <p>Free Spin Giveaway Fridays @ 8pm MST — They go fast!</p>
     </div>
 
   </div>
 
-  <!-- FREE SPIN SECTION IMAGE -->
+  <!-- FREE SPIN IMAGE -->
   <div class="free-spin-img">
-    <img src="https://tkcapp.simdif.com/images/public/sd_6929a3739b2e3.png?no_cache=1764336509" alt="Free Spins Friday">
+    <img src="https://tkcapp.simdif.com/images/public/sd_6929a3739b2e3.png?no_cache=1764336509" alt="Free Spins">
   </div>
 
   <!-- COUNTDOWN -->
   <div class="countdown-box">
-    <div class="countdown-title">Next Free Spin Friday Drop</div>
+    <div style="font-weight:bold;color:#ffd24a;font-size:18px;">Next Free Spin Friday Drop</div>
 
     <div class="countdown-grid">
-      <div class="cd-cell"><div class="num" id="d">--</div><div class="lab">Days</div></div>
-      <div class="cd-cell"><div class="num" id="h">--</div><div class="lab">Hours</div></div>
-      <div class="cd-cell"><div class="num" id="m">--</div><div class="lab">Minutes</div></div>
-      <div class="cd-cell"><div class="num" id="s">--</div><div class="lab">Seconds</div></div>
+      <div class="cd"><div id="d" class="num">--</div><div class="label">Days</div></div>
+      <div class="cd"><div id="h" class="num">--</div><div class="label">Hours</div></div>
+      <div class="cd"><div id="m" class="num">--</div><div class="label">Minutes</div></div>
+      <div class="cd"><div id="s" class="num">--</div><div class="label">Seconds</div></div>
     </div>
-
   </div>
 
   <!-- JACKPOTS -->
   <div class="jackpots">
-    <div class="jack-title">💎 Progressive Jackpots 💎</div>
+    <div style="font-size:18px;font-weight:bold;text-align:center;color:#00e6ff;margin-bottom:10px;">
+      💎 Progressive Jackpots 💎
+    </div>
 
-    <div class="jackpot-row">
-      <div class="jackpot">
+    <div class="jack-row">
+
+      <div class="jack-item">
         <div class="jack-label">Diamond Jackpot</div>
         <div class="jack-amount" id="jack1">$5,992.00</div>
       </div>
 
-      <div class="jackpot">
+      <div class="jack-item">
         <div class="jack-label">Ultimate Progressive</div>
         <div class="jack-amount" id="jack2">$284,549.00</div>
       </div>
-    </div>
 
+    </div>
   </div>
 
   <!-- CTA -->
-  <a class="cta-btn" href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank">
-    Register • Get 200% Bonus
-  </a>
+  <div class="cta">
+    <a href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank">Get 200% Bonus</a>
+  </div>
+
+  <!-- NEW BOTTOM IMAGE -->
+  <div class="bottom-banner">
+    <img src="https://tkcapp.simdif.com/images/public/sd_69254c30db765.png?no_cache=1764055627" alt="Gemini Footer Banner">
+  </div>
 
 </div>
 
-
 <script>
-/* ------------------ WEEKLY COUNTDOWN ------------------
-   Counts down to Friday 8pm MST (UTC-7)
-   Resets automatically every Friday at 10pm MST
---------------------------------------------------------*/
-
-function getNextEvent() {
+/* WEEKLY COUNTDOWN */
+function nextSpinDrop() {
   const now = new Date();
+  const FRIDAY = 5; // Friday
+  const MST_OFFSET = 7; // UTC-7
 
-  // Target times in MST (UTC-7)
-  const FRIDAY = 5; // Fri = 5
-  const MST_OFFSET = 7; // convert MST to UTC
-
-  let target = new Date();
+  const target = new Date();
   target.setUTCFullYear(now.getUTCFullYear());
   target.setUTCMonth(now.getUTCMonth());
   target.setUTCDate(now.getUTCDate());
-  target.setUTCHours(20 + MST_OFFSET, 0, 0, 0); // 8pm MST => UTC = 20 + 7 = 27 → next day rollover handled by Date()
+  target.setUTCHours(20 + MST_OFFSET, 0, 0, 0); // 8pm MST
 
-  // Ensure correct weekday
-  const currentUTCDay = now.getUTCDay();
-  let daysAhead = (FRIDAY - currentUTCDay + 7) % 7;
+  let day = now.getUTCDay();
+  let daysAhead = (FRIDAY - day + 7) % 7;
 
-  // If it is Friday but already past 10pm MST, jump to next week
-  const resetUTC = 22 + MST_OFFSET; // 10pm MST => UTC = 22 + 7 = 29
-  let reset = new Date(target);
-  reset.setUTCHours(resetUTC, 0, 0, 0);
+  const reset = new Date(target);
+  reset.setUTCHours(22 + MST_OFFSET, 0, 0, 0); // 10pm MST
 
-  if (daysAhead === 0) {
-    if (now > reset) {
-      daysAhead = 7; // next week
-    }
+  if (daysAhead === 0 && now > reset) {
+    daysAhead = 7;
   }
 
   target.setUTCDate(now.getUTCDate() + daysAhead);
-
   return target;
 }
 
-function updateCountdown() {
+function tick() {
   const now = new Date();
-  const target = getNextEvent();
-
+  const target = nextSpinDrop();
   const diff = target - now;
-  if (diff < 0) return;
 
-  const s = Math.floor(diff / 1000);
-  const m = Math.floor(s / 60);
-  const h = Math.floor(m / 60);
-  const d = Math.floor(h / 24);
+  const sec = Math.floor(diff / 1000);
+  const min = Math.floor(sec / 60);
+  const hr  = Math.floor(min / 60);
+  const day = Math.floor(hr / 24);
 
-  document.getElementById("d").textContent = d;
-  document.getElementById("h").textContent = h % 24;
-  document.getElementById("m").textContent = m % 60;
-  document.getElementById("s").textContent = s % 60;
+  document.getElementById("d").textContent = day;
+  document.getElementById("h").textContent = hr % 24;
+  document.getElementById("m").textContent = min % 60;
+  document.getElementById("s").textContent = sec % 60;
 }
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
+setInterval(tick, 1000);
+tick();
 
 /* JACKPOT ANIMATION */
-function formatMoney(n){
-  return "$" + n.toLocaleString("en-US", {minimumFractionDigits:2});
-}
-
 let j1 = 5992;
 let j2 = 284549;
 
-setInterval(()=>{
-  j1 += Math.random()*8;
-  j2 += Math.random()*40;
-  document.getElementById("jack1").textContent = formatMoney(j1);
-  document.getElementById("jack2").textContent = formatMoney(j2);
-},3000);
+function money(n){
+  return "$" + n.toLocaleString("en-US",{minimumFractionDigits:2});
+}
 
+setInterval(()=>{
+  j1 += Math.random()*5;
+  j2 += Math.random()*30;
+  document.getElementById("jack1").textContent = money(j1);
+  document.getElementById("jack2").textContent = money(j2);
+}, 2500);
 </script>
 
 </body>
