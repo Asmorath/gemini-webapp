@@ -11,6 +11,7 @@
     background:#000;
     font-family:Arial, sans-serif;
     color:#fff;
+    line-height:1.4;
   }
 
   .container {
@@ -23,77 +24,94 @@
   .hero img {
     width:100%;
     height:auto;
-    border-radius:10px;
+    border-radius:12px;
     display:block;
   }
 
-  /* TITLES */
+  /* HEADERS */
   h1 {
     text-align:center;
     color:#00ff6a;
-    font-size:22px;
-    margin:20px 0 10px;
+    font-size:24px;
+    margin:25px 0 15px;
+    font-weight:800;
   }
 
   /* BONUS SECTION */
   .bonus-card {
-    background:#111;
-    border:1px solid #222;
-    padding:15px;
-    border-radius:10px;
+    background:#0c0c0c;
+    border:1px solid #1e1e1e;
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:20px;
   }
 
   .bonus-item {
-    margin-bottom:15px;
+    margin-bottom:18px;
+    padding-bottom:12px;
+    border-bottom:1px solid #1d1d1d;
+  }
+
+  .bonus-item:last-child {
+    border-bottom:none;
+    margin-bottom:0;
+    padding-bottom:0;
   }
 
   .bonus-item h3 {
-    margin:0;
+    margin:0 0 4px;
     color:#00e6ff;
-    font-size:16px;
-    font-weight:bold;
+    font-size:18px;
+    font-weight:700;
   }
 
   .bonus-item p {
-    margin:3px 0 0;
+    margin:0;
     color:#ccc;
-    font-size:14px;
+    font-size:15px;
   }
 
   /* FREE SPIN IMAGE */
   .free-spin-img img {
     width:100%;
     height:auto;
-    margin-top:15px;
-    border-radius:10px;
+    margin-top:20px;
+    border-radius:12px;
   }
 
   /* COUNTDOWN */
   .countdown-box {
-    background:#111;
-    border:1px solid #222;
-    margin-top:15px;
-    padding:15px;
-    border-radius:10px;
+    background:#0c0c0c;
+    border:1px solid #1e1e1e;
+    margin-top:22px;
+    padding:20px;
+    border-radius:12px;
     text-align:center;
+  }
+
+  .count-title {
+    font-size:20px;
+    font-weight:700;
+    color:#ffd24a;
+    margin-bottom:12px;
   }
 
   .countdown-grid {
     display:flex;
     justify-content:center;
-    gap:10px;
+    gap:15px;
     margin-top:10px;
   }
 
   .cd {
-    background:#222;
-    padding:10px;
-    border-radius:8px;
-    min-width:55px;
+    background:#171717;
+    padding:12px;
+    border-radius:10px;
+    min-width:60px;
   }
 
   .num {
-    font-size:20px;
+    font-size:22px;
     font-weight:bold;
   }
 
@@ -102,78 +120,47 @@
     color:#aaa;
   }
 
-  /* JACKPOTS */
-  .jackpots {
-    background:#111;
-    border:1px solid #222;
-    padding:15px;
-    margin-top:20px;
-    border-radius:10px;
-  }
-
-  .jack-row {
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
-
-  .jack-item {
-    background:#222;
-    padding:10px;
-    border-radius:8px;
-    text-align:center;
-  }
-
-  .jack-label {
-    font-size:13px;
-    color:#ccc;
-  }
-
-  .jack-amount {
-    font-size:20px;
-    margin-top:4px;
-    color:#ff3ecb;
-    font-weight:bold;
-  }
-
-  /* CTA */
+  /* CTA BUTTON */
   .cta {
     text-align:center;
-    margin-top:20px;
+    margin-top:25px;
   }
 
   .cta a {
     display:inline-block;
     background:#00ff6a;
     color:#000;
-    padding:12px 20px;
-    border-radius:10px;
+    padding:14px 24px;
+    border-radius:12px;
     font-weight:bold;
     text-decoration:none;
-    font-size:18px;
+    font-size:20px;
+    box-shadow:0 0 12px #00ff6a80;
   }
 
-  /* NEW BOTTOM IMAGE */
+  /* BOTTOM IMAGE */
   .bottom-banner img {
     width:100%;
     height:auto;
-    margin-top:15px;
-    border-radius:10px;
+    margin-top:20px;
+    border-radius:12px;
     display:block;
   }
 </style>
 </head>
-<body>
 
+<body>
 <div class="container">
 
-  <!-- HERO IMAGE -->
+  <!-- HERO -->
   <div class="hero">
-    <img src="https://tkcapp.simdif.com/images/public/sd_69254be99164b.jpg?no_cache=1764055556" alt="Gemini Casino Hero">
+    <img src="https://tkcapp.simdif.com/images/public/sd_69254be99164b.jpg?no_cache=1764055556" alt="Gemini Hero">
   </div>
 
+  <!-- HEADER -->
   <h1>New Bonus Schedule — Starting November 1st</h1>
 
+  <!-- BONUS LIST -->
   <div class="bonus-card">
 
     <div class="bonus-item">
@@ -200,109 +187,60 @@
 
   <!-- COUNTDOWN -->
   <div class="countdown-box">
-    <div style="font-weight:bold;color:#ffd24a;font-size:18px;">Next Free Spin Friday Drop</div>
+    <div class="count-title">Next Free Spin Friday Drop</div>
 
     <div class="countdown-grid">
-      <div class="cd"><div id="d" class="num">--</div><div class="label">Days</div></div>
-      <div class="cd"><div id="h" class="num">--</div><div class="label">Hours</div></div>
-      <div class="cd"><div id="m" class="num">--</div><div class="label">Minutes</div></div>
-      <div class="cd"><div id="s" class="num">--</div><div class="label">Seconds</div></div>
+      <div class="cd"><div class="num" id="h">--</div><div class="label">Hours</div></div>
+      <div class="cd"><div class="num" id="m">--</div><div class="label">Minutes</div></div>
+      <div class="cd"><div class="num" id="s">--</div><div class="label">Seconds</div></div>
     </div>
   </div>
 
-  <!-- JACKPOTS -->
-  <div class="jackpots">
-    <div style="font-size:18px;font-weight:bold;text-align:center;color:#00e6ff;margin-bottom:10px;">
-      💎 Progressive Jackpots 💎
-    </div>
-
-    <div class="jack-row">
-
-      <div class="jack-item">
-        <div class="jack-label">Diamond Jackpot</div>
-        <div class="jack-amount" id="jack1">$5,992.00</div>
-      </div>
-
-      <div class="jack-item">
-        <div class="jack-label">Ultimate Progressive</div>
-        <div class="jack-amount" id="jack2">$284,549.00</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- CTA -->
+  <!-- CTA BUTTON -->
   <div class="cta">
-    <a href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank">Get 200% Bonus</a>
+    <a href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank">
+      Get 200% Bonus
+    </a>
   </div>
 
-  <!-- NEW BOTTOM IMAGE -->
+  <!-- BOTTOM IMAGE -->
   <div class="bottom-banner">
-    <img src="https://tkcapp.simdif.com/images/public/sd_69254c30db765.png?no_cache=1764055627" alt="Gemini Footer Banner">
+    <img src="https://tkcapp.simdif.com/images/public/sd_69254c30db765.png?no_cache=1764055627" alt="Gemini Footer">
   </div>
 
 </div>
 
+<!-- FIXED CLEAN COUNTDOWN SCRIPT -->
 <script>
-/* WEEKLY COUNTDOWN */
-function nextSpinDrop() {
+function targetToday8pmMST() {
   const now = new Date();
-  const FRIDAY = 5; // Friday
-  const MST_OFFSET = 7; // UTC-7
+  const utcNow = new Date(now.toISOString());
 
   const target = new Date();
-  target.setUTCFullYear(now.getUTCFullYear());
-  target.setUTCMonth(now.getUTCMonth());
-  target.setUTCDate(now.getUTCDate());
-  target.setUTCHours(20 + MST_OFFSET, 0, 0, 0); // 8pm MST
-
-  let day = now.getUTCDay();
-  let daysAhead = (FRIDAY - day + 7) % 7;
-
-  const reset = new Date(target);
-  reset.setUTCHours(22 + MST_OFFSET, 0, 0, 0); // 10pm MST
-
-  if (daysAhead === 0 && now > reset) {
-    daysAhead = 7;
-  }
-
-  target.setUTCDate(now.getUTCDate() + daysAhead);
+  target.setUTCFullYear(utcNow.getUTCFullYear());
+  target.setUTCMonth(utcNow.getUTCMonth());
+  target.setUTCDate(utcNow.getUTCDate());
+  target.setUTCHours(27, 0, 0, 0); // 20:00 MST = UTC+7 = 27:00 UTC
   return target;
 }
 
 function tick() {
   const now = new Date();
-  const target = nextSpinDrop();
-  const diff = target - now;
+  let diff = targetToday8pmMST() - now;
+
+  if (diff <= 0) diff = 0;
 
   const sec = Math.floor(diff / 1000);
   const min = Math.floor(sec / 60);
-  const hr  = Math.floor(min / 60);
-  const day = Math.floor(hr / 24);
+  const hr = Math.floor(min / 60);
 
-  document.getElementById("d").textContent = day;
-  document.getElementById("h").textContent = hr % 24;
-  document.getElementById("m").textContent = min % 60;
-  document.getElementById("s").textContent = sec % 60;
+  document.getElementById("h").innerText = hr % 24;
+  document.getElementById("m").innerText = min % 60;
+  document.getElementById("s").innerText = sec % 60;
 }
 
 setInterval(tick, 1000);
 tick();
-
-/* JACKPOT ANIMATION */
-let j1 = 5992;
-let j2 = 284549;
-
-function money(n){
-  return "$" + n.toLocaleString("en-US",{minimumFractionDigits:2});
-}
-
-setInterval(()=>{
-  j1 += Math.random()*5;
-  j2 += Math.random()*30;
-  document.getElementById("jack1").textContent = money(j1);
-  document.getElementById("jack2").textContent = money(j2);
-}, 2500);
 </script>
 
 </body>
