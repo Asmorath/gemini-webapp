@@ -10,299 +10,337 @@
 <style>
   :root{
     --bg:#000;
-    --neon-green: #00d13a;
-    --neon-cyan: #00e6ff;
-    --neon-pink: #ff3ecb;
-    --neon-purple: #8e2cff;
-    --neon-gold: #ffd24a;
-    --muted:#c7ffe0;
-    --glass: rgba(255,255,255,0.04);
-    --card-radius:18px;
+    --green:#00ff6a;
+    --cyan:#00e6ff;
+    --pink:#ff3ecb;
+    --purple:#8e2cff;
+    --gold:#ffd24a;
   }
 
-  html,body{height:100%;margin:0;background:var(--bg);color:#dfffe6;font-family:Montserrat,system-ui,Arial;}
-  .wrap{max-width:1100px;margin:18px auto;padding:18px;display:flex;flex-direction:column;gap:16px;}
-  header{display:flex;align-items:center;gap:16px;}
-  .brand {
-    display:flex;align-items:center;gap:12px;
-  }
-  .logo-chip{
-    width:68px;height:68px;border-radius:12px;background:linear-gradient(180deg,#00c13a,#008f1f);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,200,80,0.12), inset 0 -6px 12px rgba(0,0,0,0.35);
-    position:relative;
-  }
-  .logo-chip::after{
-    content:"gc";font-weight:800;font-family:Montserrat, sans-serif;color:white;font-size:28px;
-    text-shadow:0 2px 8px rgba(0,0,0,0.4);
-  }
-  .title{
-    display:flex;flex-direction:column;
-  }
-  .title h1{margin:0;font-size:20px;font-weight:800;color:#fff;letter-spacing:0.5px;text-transform:lowercase;}
-  .title .tagline{font-family:'Playfair Display', serif;color:var(--neon-green);font-size:28px;line-height:1;margin-top:4px;text-shadow:0 4px 18px rgba(0,200,80,0.12);}
-
-  /* Hero poster style */
-  .poster{
-    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
-    border-radius:var(--card-radius);padding:20px;display:flex;flex-direction:column;align-items:center;gap:14px;box-shadow:0 8px 40px rgba(0,0,0,0.6), 0 0 40px rgba(0,200,80,0.03);
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:Montserrat, sans-serif;
+    color:white;
   }
 
-  .big-headline{
-    font-family:'Playfair Display', serif;
-    color:#fff;font-size:56px;text-align:center;margin:6px 0 0 0;letter-spacing:2px;
-    text-shadow: 0 6px 18px rgba(0,0,0,0.8);
-  }
-  .sub-swash{color:var(--neon-green);font-size:40px; margin-top:-6px;font-weight:700; text-decoration: none; text-shadow:0 8px 30px rgba(0,200,80,0.12);}
-  .chips-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
-
-  /* Bonuses card */
-  .bonus-grid{
-    width:100%;display:grid;grid-template-columns:1fr 320px;gap:16px;
-  }
-  .bonus-list{
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
-    padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
-  }
-  .bonus-item{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.03);}
-  .bonus-item:last-child{border-bottom:none;}
-  .badge{background:var(--neon-green);color:#021;min-width:56px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 6px 18px rgba(0,200,80,0.12);}
-  .bonus-item h3{margin:0;font-size:16px;font-weight:800;color:#fff;}
-  .bonus-item p{margin:4px 0 0 0;color:rgba(255,255,255,0.72);font-size:14px;}
-
-  /* Countdown area */
-  .countdown-card{background:linear-gradient(135deg, rgba(14,14,14,0.9), rgba(0,0,0,0.6));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);display:flex;flex-direction:column;align-items:center;justify-content:center;}
-  .countdown-title{font-weight:800;color:var(--neon-gold);margin-bottom:8px;}
-  .countdown-large{font-size:34px;font-weight:800;color:var(--neon-green);letter-spacing:2px;}
-  .cd-grid{display:flex;gap:12px;margin-top:8px;}
-  .cd-cell{min-width:60px;background:var(--glass);padding:10px;border-radius:8px;text-align:center;font-weight:800;}
-  .cd-cell .n{font-size:20px;color:#fff;}
-  .cd-cell .t{font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-top:4px;}
-
-  /* Jackpots */
-  .jackpot-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
-  .jackpot{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;min-width:220px;text-align:center;border:1px solid rgba(255,255,255,0.03);}
-  .jackpot .label{font-size:12px;color:rgba(255,255,255,0.7);text-transform:uppercase;}
-  .jackpot .amt{font-size:22px;font-weight:900;color:var(--neon-pink);text-shadow:0 8px 30px rgba(140,44,255,0.06);}
-
-  /* Features & CTA */
-  .features{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-top:6px;}
-  .features ul{margin:0;padding:0 8px 0 20px;}
-  .features li{list-style:disc;margin:6px 0;color:rgba(255,255,255,0.78);font-weight:600;}
-  .cta{
-    display:flex;gap:12px;align-items:center;justify-content:center;margin-top:12px;
-  }
-  .btn-primary{
-    background:linear-gradient(90deg,var(--neon-green), #00f5a1);
-    color:#021;padding:12px 18px;border-radius:12px;font-weight:900;border:none;font-size:16px;text-decoration:none;box-shadow:0 12px 40px rgba(0,200,80,0.14);
-  }
-  .btn-secondary{
-    background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;
+  .container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
   }
 
-  footer{color:rgba(255,255,255,0.4);font-size:13px;padding:8px 6px;margin-top:10px;text-align:center;}
+  /* HERO IMAGE */
+  .hero{
+    width:100%;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 0 40px rgba(0,255,140,0.2);
+  }
+  .hero img{
+    width:100%;
+    display:block;
+  }
 
-  /* responsive */
-  @media (max-width:880px){
-    .bonus-grid{grid-template-columns:1fr; }
-    .big-headline{font-size:40px;}
-    .title .tagline{font-size:24px;}
-    .logo-chip{width:58px;height:58px;}
+  /* BONUS SCHEDULE */
+  h1{
+    font-size:30px;
+    margin-top:25px;
+    font-weight:800;
+    color:var(--green);
+    text-align:center;
   }
-  @media (max-width:420px){
-    .big-headline{font-size:32px;}
-    .sub-swash{font-size:26px;}
-    .cd-cell{min-width:50px;padding:8px;}
+
+  .bonus-card{
+    background:#0d0d0d;
+    padding:20px;
+    border-radius:12px;
+    margin-top:20px;
+    border:1px solid rgba(255,255,255,0.08);
   }
+
+  .bonus-item{
+    margin-bottom:18px;
+  }
+
+  .bonus-item h3{
+    margin:0 0 4px 0;
+    color:var(--cyan);
+    font-size:18px;
+  }
+
+  .bonus-item p{
+    margin:0;
+    color:#ccc;
+    font-size:14px;
+  }
+
+  /* FREE SPIN IMAGE SECTION */
+  .free-spin-img{
+    width:100%;
+    margin-top:22px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 0 35px rgba(255,215,0,0.15);
+  }
+  .free-spin-img img{
+    width:100%;
+  }
+
+  /* COUNTDOWN */
+  .countdown-box{
+    background:#0d0d0d;
+    padding:20px;
+    border-radius:12px;
+    margin-top:20px;
+    border:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+  }
+
+  .countdown-title{
+    font-weight:800;
+    color:var(--gold);
+    font-size:20px;
+    margin-bottom:10px;
+  }
+
+  .countdown-grid{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    margin-top:10px;
+  }
+
+  .cd-cell{
+    background:rgba(255,255,255,0.05);
+    padding:12px 15px;
+    border-radius:10px;
+    min-width:60px;
+  }
+
+  .cd-cell .num{
+    font-size:22px;
+    font-weight:800;
+  }
+  .cd-cell .lab{
+    font-size:12px;
+    opacity:0.7;
+    margin-top:4px;
+  }
+
+  /* JACKPOTS */
+  .jackpots{
+    margin-top:30px;
+    background:#0d0d0d;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.08);
+  }
+
+  .jack-title{
+    font-size:22px;
+    color:var(--cyan);
+    text-align:center;
+    font-weight:800;
+    margin-bottom:14px;
+  }
+
+  .jackpot-row{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+  }
+
+  .jackpot{
+    background:rgba(255,255,255,0.05);
+    padding:12px 20px;
+    border-radius:10px;
+    min-width:220px;
+    text-align:center;
+  }
+
+  .jack-label{
+    font-size:13px;
+    opacity:0.7;
+  }
+
+  .jack-amount{
+    font-size:22px;
+    color:var(--pink);
+    font-weight:900;
+    margin-top:5px;
+  }
+
+  /* CTA */
+  .cta-btn{
+    display:block;
+    margin:25px auto;
+    width:max-content;
+    padding:14px 22px;
+    background:linear-gradient(90deg,var(--green),#00ffaa);
+    color:#000;
+    font-weight:900;
+    font-size:18px;
+    border-radius:12px;
+    text-decoration:none;
+    box-shadow:0 0 30px rgba(0,255,120,0.22);
+  }
+
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo-chip" aria-hidden="true"></div>
-        <div class="title">
-          <h1>gemini casino</h1>
-          <div class="tagline">NO KYC • NO LIMITS</div>
-        </div>
-      </div>
-      <div style="margin-left:auto;color:rgba(255,255,255,0.6);font-weight:700;">Fast deposits • Fast payouts</div>
-    </header>
 
-    <section class="poster" role="banner" aria-label="Gemini Casino Bonus Portal">
-      <div style="display:flex;flex-direction:column;align-items:center;">
-        <div class="big-headline">NO KYC • NO LIMITS</div>
-        <div class="sub-swash">Gemini Casino</div>
-      </div>
+<div class="container">
 
-      <div class="bonus-grid" aria-live="polite">
-        <div class="bonus-list">
-          <div style="font-weight:900;font-size:16px;color:var(--neon-cyan);margin-bottom:10px;">Bonus Schedule (New schedule starts Nov 1st)</div>
-
-          <div class="bonus-item">
-            <div class="badge">Sat</div>
-            <div>
-              <h3>🎁 Saturday 100% Deposit Match</h3>
-              <p>Each deposit from 9pm–10pm MST — 100% match instantly applied.</p>
-            </div>
-          </div>
-
-          <div class="bonus-item">
-            <div class="badge">Mon</div>
-            <div>
-              <h3>🎁 Monday Reload Bonus</h3>
-              <p>50% first deposit match — 8pm–9pm MST. Reload and keep playing.</p>
-            </div>
-          </div>
-
-          <div class="bonus-item">
-            <div class="badge">Fri</div>
-            <div>
-              <h3>🎁 Free Spin Fridays</h3>
-              <p>Free Spin Giveaway Fridays @ 8pm MST. They go fast — be there!</p>
-            </div>
-          </div>
-
-          <div style="margin-top:12px;padding-top:10px;border-top:1px dashed rgba(255,255,255,0.03);">
-            <div style="font-weight:900;margin-bottom:6px;color:var(--neon-gold)">Features</div>
-            <ul>
-              <li>LIVE progressive jackpots — Any spin could qualify</li>
-              <li>Hacksaw Gaming added, A–Z providers available</li>
-              <li>No KYC ever • No limits • You keep what you win</li>
-            </ul>
-          </div>
-
-          <div class="cta" style="margin-top:14px;justify-content:flex-start;">
-            <a class="btn-primary" id="register" href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank" rel="noopener">Register & Get 200% Match</a>
-            <a class="btn-secondary" href="#jackpots">View Jackpots</a>
-          </div>
-        </div>
-
-        <!-- Right column: countdown & jackpots -->
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <div class="countdown-card" role="timer" aria-atomic="true" aria-label="Countdown to next Free Spin Friday">
-            <div class="countdown-title">Free Spin Giveaway — Next Drop</div>
-            <div class="countdown-large">Fridays • 8PM MST</div>
-
-            <div class="cd-grid" style="margin-top:10px;">
-              <div class="cd-cell"><div class="n" id="cd-days">--</div><div class="t">Days</div></div>
-              <div class="cd-cell"><div class="n" id="cd-hours">--</div><div class="t">Hours</div></div>
-              <div class="cd-cell"><div class="n" id="cd-mins">--</div><div class="t">Minutes</div></div>
-              <div class="cd-cell"><div class="n" id="cd-secs">--</div><div class="t">Seconds</div></div>
-            </div>
-
-            <div style="font-size:12px;color:rgba(255,255,255,0.6);margin-top:10px;">Show starts @ 8pm MST — join the giveaway in the lobby!</div>
-            <div style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.7)">Tip: join 5 minutes early — spins go fast 🔥</div>
-          </div>
-
-          <div id="jackpots" class="countdown-card" style="padding:12px;">
-            <div style="font-weight:900;color:var(--neon-cyan);">💎 Progressive Jackpots 💎</div>
-            <div class="jackpot-row">
-              <div class="jackpot">
-                <div class="label">Diamond Jackpot</div>
-                <div class="amt" id="jack-diamond">$5,992.00</div>
-              </div>
-              <div class="jackpot">
-                <div class="label">Ultimate Progressive</div>
-                <div class="amt" id="jack-ultimate">$284,549.00</div>
-              </div>
-            </div>
-            <div style="font-size:13px;color:rgba(255,255,255,0.75);margin-top:10px;">Are due to go off anytime now — any spin could qualify!</div>
-          </div>
-        </div>
-      </div>
-
-      <div style="width:100%;margin-top:10px;">
-        <div style="font-size:13px;color:rgba(255,255,255,0.8);text-align:center;padding:8px;">New users register here and get the 200% match instantly applied.</div>
-      </div>
-
-    </section>
-
-    <section style="display:flex;flex-direction:column;gap:8px;">
-      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between;">
-        <div style="flex:1">
-          <h3 style="margin:6px 0;color:var(--neon-green)">Why Gemini?</h3>
-          <p style="margin:0;color:rgba(255,255,255,0.8);max-width:820px;">
-            Fast deposits, fast payouts. No lengthy KYC, no withdrawal hurdles — just clean, rapid processing so players can cash out and keep playing. Play live tables, slots, and new providers like Hacksaw Gaming. Big jackpots, big excitement.
-          </p>
-        </div>
-
-        <div style="min-width:220px;text-align:center;">
-          <a class="btn-primary" href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank" rel="noopener">Claim 200% Bonus</a>
-        </div>
-      </div>
-      <footer>
-        Gemini Casino — No KYC • No Limits • You keep what you win. Promo subject to terms. This is a demo portal for promotional use.
-      </footer>
-    </section>
+  <!-- HERO IMAGE FROM SIMDIF -->
+  <div class="hero">
+    <img src="https://tkcapp.simdif.com/images/public/sd_6929a3739b2e3.png?no_cache=1764336509" alt="Gemini Casino Hero">
   </div>
 
+  <!-- BONUS SCHEDULE -->
+  <h1>New Bonus Schedule — Starting November 1st</h1>
+
+  <div class="bonus-card">
+
+    <div class="bonus-item">
+      <h3>🎁 Saturday 100% Deposit Match</h3>
+      <p>Each deposit from 9pm–10pm MST</p>
+    </div>
+
+    <div class="bonus-item">
+      <h3>🎁 Monday Reload Bonus</h3>
+      <p>50% First Deposit Match — 8pm–9pm MST</p>
+    </div>
+
+    <div class="bonus-item">
+      <h3>🎁 Free Spin Fridays Has Returned!!</h3>
+      <p>Free Spin Giveaway Fridays @ 8pm MST! They go fast!!!!</p>
+    </div>
+
+  </div>
+
+  <!-- FREE SPIN SECTION IMAGE -->
+  <div class="free-spin-img">
+    <img src="https://tkcapp.simdif.com/images/public/sd_6929a3739b2e3.png?no_cache=1764336509" alt="Free Spins Friday">
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-box">
+    <div class="countdown-title">Next Free Spin Friday Drop</div>
+
+    <div class="countdown-grid">
+      <div class="cd-cell"><div class="num" id="d">--</div><div class="lab">Days</div></div>
+      <div class="cd-cell"><div class="num" id="h">--</div><div class="lab">Hours</div></div>
+      <div class="cd-cell"><div class="num" id="m">--</div><div class="lab">Minutes</div></div>
+      <div class="cd-cell"><div class="num" id="s">--</div><div class="lab">Seconds</div></div>
+    </div>
+
+  </div>
+
+  <!-- JACKPOTS -->
+  <div class="jackpots">
+    <div class="jack-title">💎 Progressive Jackpots 💎</div>
+
+    <div class="jackpot-row">
+      <div class="jackpot">
+        <div class="jack-label">Diamond Jackpot</div>
+        <div class="jack-amount" id="jack1">$5,992.00</div>
+      </div>
+
+      <div class="jackpot">
+        <div class="jack-label">Ultimate Progressive</div>
+        <div class="jack-amount" id="jack2">$284,549.00</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <a class="cta-btn" href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank">
+    Register • Get 200% Bonus
+  </a>
+
+</div>
+
+
 <script>
-/* ---------- Countdown to next Friday 8:00 PM MST ---------- */
-/* MST is treated as UTC-7 per requirement (fixed offset). */
-function nextFriday8pmMST(){
+/* ------------------ WEEKLY COUNTDOWN ------------------
+   Counts down to Friday 8pm MST (UTC-7)
+   Resets automatically every Friday at 10pm MST
+--------------------------------------------------------*/
+
+function getNextEvent() {
   const now = new Date();
-  const nowUTCday = now.getUTCDay(); // 0 Sun..6 Sat
-  // target weekday is Friday => 5
-  let daysUntil = (5 - nowUTCday + 7) % 7;
-  // if today is Friday, we must ensure target time hasn't already passed in MST
-  // compute candidate target UTC time by applying MST offset (-7)
-  let candidateUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + daysUntil, 20 + 7, 0, 0); // 20 MST -> UTC = 27 (20+7)
-  if(candidateUTC <= now.getTime()){
-    // it's already passed this week: schedule next week
-    candidateUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + daysUntil + 7, 20 + 7, 0, 0);
+
+  // Target times in MST (UTC-7)
+  const FRIDAY = 5; // Fri = 5
+  const MST_OFFSET = 7; // convert MST to UTC
+
+  let target = new Date();
+  target.setUTCFullYear(now.getUTCFullYear());
+  target.setUTCMonth(now.getUTCMonth());
+  target.setUTCDate(now.getUTCDate());
+  target.setUTCHours(20 + MST_OFFSET, 0, 0, 0); // 8pm MST => UTC = 20 + 7 = 27 → next day rollover handled by Date()
+
+  // Ensure correct weekday
+  const currentUTCDay = now.getUTCDay();
+  let daysAhead = (FRIDAY - currentUTCDay + 7) % 7;
+
+  // If it is Friday but already past 10pm MST, jump to next week
+  const resetUTC = 22 + MST_OFFSET; // 10pm MST => UTC = 22 + 7 = 29
+  let reset = new Date(target);
+  reset.setUTCHours(resetUTC, 0, 0, 0);
+
+  if (daysAhead === 0) {
+    if (now > reset) {
+      daysAhead = 7; // next week
+    }
   }
-  return new Date(candidateUTC);
+
+  target.setUTCDate(now.getUTCDate() + daysAhead);
+
+  return target;
 }
 
-function updateCountdown(){
-  const target = nextFriday8pmMST();
+function updateCountdown() {
   const now = new Date();
-  let diff = Math.max(0, target - now);
-  const days = Math.floor(diff / (1000*60*60*24));
-  diff -= days * (1000*60*60*24);
-  const hours = Math.floor(diff / (1000*60*60));
-  diff -= hours * (1000*60*60);
-  const mins = Math.floor(diff / (1000*60));
-  diff -= mins * (1000*60);
-  const secs = Math.floor(diff/1000);
+  const target = getNextEvent();
 
-  document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
-  document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
-  document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+  const diff = target - now;
+  if (diff < 0) return;
+
+  const s = Math.floor(diff / 1000);
+  const m = Math.floor(s / 60);
+  const h = Math.floor(m / 60);
+  const d = Math.floor(h / 24);
+
+  document.getElementById("d").textContent = d;
+  document.getElementById("h").textContent = h % 24;
+  document.getElementById("m").textContent = m % 60;
+  document.getElementById("s").textContent = s % 60;
 }
 
-/* ---------- Jackpot micro-animation (simple incremental illusion) ---------- */
-function animateJackpots(){
-  const diamondEl = document.getElementById('jack-diamond');
-  const ultimateEl = document.getElementById('jack-ultimate');
-
-  // base amounts (could be fetched from API in production)
-  let diamond = 5992.00;
-  let ultimate = 284549.00;
-
-  // Small random increments to create motion
-  setInterval(() => {
-    const ddelta = (Math.random()*6); // 0-6 dollars
-    const udelta = (Math.random()*45); // 0-45 dollars
-    diamond += ddelta;
-    ultimate += udelta;
-    diamondEl.textContent = formatMoney(diamond);
-    ultimateEl.textContent = formatMoney(ultimate);
-  }, 3000);
-}
-
-function formatMoney(n){
-  // show with commas and two decimals
-  return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-/* init */
-updateCountdown();
 setInterval(updateCountdown, 1000);
-animateJackpots();
+updateCountdown();
 
-/* accessibility: announce countdown on tab focus for screen readers */
-window.addEventListener('focus', updateCountdown);
+
+/* JACKPOT ANIMATION */
+function formatMoney(n){
+  return "$" + n.toLocaleString("en-US", {minimumFractionDigits:2});
+}
+
+let j1 = 5992;
+let j2 = 284549;
+
+setInterval(()=>{
+  j1 += Math.random()*8;
+  j2 += Math.random()*40;
+  document.getElementById("jack1").textContent = formatMoney(j1);
+  document.getElementById("jack2").textContent = formatMoney(j2);
+},3000);
+
 </script>
+
 </body>
 </html>
