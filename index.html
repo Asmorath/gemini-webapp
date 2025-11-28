@@ -20,7 +20,6 @@
     padding:15px;
   }
 
-  /* HERO IMAGE */
   .hero img {
     width:100%;
     height:auto;
@@ -28,7 +27,27 @@
     display:block;
   }
 
-  /* HEADERS */
+  .cta {
+    text-align:center;
+  }
+
+  .cta a {
+    display:inline-block;
+    background:#00ff6a;
+    color:#000;
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:bold;
+    text-decoration:none;
+    font-size:20px;
+    box-shadow:0 0 12px #00ff6a80;
+  }
+
+  .top-cta {
+    margin-top:18px;
+    margin-bottom:20px;
+  }
+
   h1 {
     text-align:center;
     color:#00ff6a;
@@ -37,7 +56,6 @@
     font-weight:800;
   }
 
-  /* BONUS SECTION */
   .bonus-card {
     background:#0c0c0c;
     border:1px solid #1e1e1e;
@@ -71,7 +89,6 @@
     font-size:15px;
   }
 
-  /* FREE SPIN IMAGE */
   .free-spin-img img {
     width:100%;
     height:auto;
@@ -79,7 +96,6 @@
     border-radius:12px;
   }
 
-  /* COUNTDOWN */
   .countdown-box {
     background:#0c0c0c;
     border:1px solid #1e1e1e;
@@ -120,25 +136,6 @@
     color:#aaa;
   }
 
-  /* CTA BUTTON */
-  .cta {
-    text-align:center;
-    margin-top:25px;
-  }
-
-  .cta a {
-    display:inline-block;
-    background:#00ff6a;
-    color:#000;
-    padding:14px 24px;
-    border-radius:12px;
-    font-weight:bold;
-    text-decoration:none;
-    font-size:20px;
-    box-shadow:0 0 12px #00ff6a80;
-  }
-
-  /* BOTTOM IMAGE */
   .bottom-banner img {
     width:100%;
     height:auto;
@@ -155,6 +152,13 @@
   <!-- HERO -->
   <div class="hero">
     <img src="https://tkcapp.simdif.com/images/public/sd_69254be99164b.jpg?no_cache=1764055556" alt="Gemini Hero">
+  </div>
+
+  <!-- TOP CTA BUTTON -->
+  <div class="cta top-cta">
+    <a href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank">
+      Claim 200% Bonus
+    </a>
   </div>
 
   <!-- HEADER -->
@@ -196,8 +200,8 @@
     </div>
   </div>
 
-  <!-- CTA BUTTON -->
-  <div class="cta">
+  <!-- BOTTOM CTA -->
+  <div class="cta" style="margin-top:25px;">
     <a href="https://geminicasino.com/?registration=true&promo=FB888" target="_blank">
       Get 200% Bonus
     </a>
@@ -210,7 +214,7 @@
 
 </div>
 
-<!-- FIXED CLEAN COUNTDOWN SCRIPT -->
+<!-- 8PM TODAY COUNTDOWN -->
 <script>
 function targetToday8pmMST() {
   const now = new Date();
@@ -220,7 +224,7 @@ function targetToday8pmMST() {
   target.setUTCFullYear(utcNow.getUTCFullYear());
   target.setUTCMonth(utcNow.getUTCMonth());
   target.setUTCDate(utcNow.getUTCDate());
-  target.setUTCHours(27, 0, 0, 0); // 20:00 MST = UTC+7 = 27:00 UTC
+  target.setUTCHours(27, 0, 0, 0); // 20:00 MST converted to UTC
   return target;
 }
 
